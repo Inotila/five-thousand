@@ -1,14 +1,51 @@
+/* body, h1 to h6, header, and footer */
+
 body {
-    background-color: yellow;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    background-color: #fbff00;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
+    overflow: hidden;
     width: 100%;
-    height: 10em;
+    height: 15em;
 }
+
+footer {
+    clear: both;
+    position: relative;
+    left: 0;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+/* homepage */
 
 #game-logo {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+/*social media links */
+
+.social-networks {
+    text-align: center;
+}
+
+.social-networks>li {
+    display: inline;
+}
+
+.social-networks i {
+    font-size: 150%;
+    margin: 0;
+    padding: 2%;
+    color: #000;
 }
