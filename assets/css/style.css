@@ -102,12 +102,12 @@ a {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    height: 50%;
+    height: 200px;
     background-color: #eff14e;
 }
 
 #play-zone > img {
-    width: 8%;
+    width: 133px;
 }
 
 
