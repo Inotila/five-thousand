@@ -60,7 +60,7 @@ a {
     text-align: center;
 }
 
-#home-buttons {
+.control-buttons {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -80,6 +80,52 @@ a {
     background-color: #a0db16;
 }
 
+/* game play*/
+
+#score-keeper{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#player-score {
+    float: left;
+}
+
+#cpu-score {
+    float: right;
+}
+
+#play-zone {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    background-color: #eff14e;
+}
+
+
+#play-controls {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.play-buttons {
+    font-size: 130%;
+    width: 100px;
+    height: 75px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 3px solid #000;
+    background-color: #fff;
+}
+
+.play-buttons:hover {
+    background-color: #a0db16;
+}
 
 /*social media links */
 
