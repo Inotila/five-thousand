@@ -21,6 +21,26 @@ function rollDi() {
        let roll = Math.floor(Math.random()*6)+1;
         console.log(roll);
     }
+
+        //roll the dice
+   let diceOne= Math.floor(Math.random() * 6) + 1;
+   let diceTwo= Math.floor(Math.random() * 6) + 1;
+   let diceThree= Math.floor(Math.random() * 6) + 1;
+   let diceFour= Math.floor(Math.random() * 6) + 1;
+   let diceFive= Math.floor(Math.random() * 6) + 1;
+   let diceSix= Math.floor(Math.random() * 6) + 1;
+
+   let diceRoll = [diceOne, diceTwo, diceThree, diceFour, diceFive,diceSix];
+   console.log(diceRoll);
+
+   //display the result
+
+   document.getElementById("dice-one").src = "./assets/images/dice" + diceOne + ".png"; 
+   document.getElementById("dice-two").src = "./assets/images/dice" + diceTwo + ".png"; 
+   document.getElementById("dice-three").src = "./assets/images/dice" + diceThree + ".png"; 
+   document.getElementById("dice-four").src = "./assets/images/dice" + diceFour + ".png"; 
+   document.getElementById("dice-five").src = "./assets/images/dice" + diceFive + ".png"; 
+   document.getElementById("dice-six").src = "./assets/images/dice" + diceSix + ".png"
 }
 
 function keepDi() {
