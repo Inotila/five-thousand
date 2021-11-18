@@ -17,43 +17,79 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function rollDi() {
-    for (let i = 0; i <6; i++){
-       let roll = Math.floor(Math.random()*6)+1;
-        console.log(roll);
-    }
+    //roll the dice
+    let diceOne = Math.floor(Math.random() * 6) + 1;
+    let diceTwo = Math.floor(Math.random() * 6) + 1;
+    let diceThree = Math.floor(Math.random() * 6) + 1;
+    let diceFour = Math.floor(Math.random() * 6) + 1;
+    let diceFive = Math.floor(Math.random() * 6) + 1;
+    let diceSix = Math.floor(Math.random() * 6) + 1;
 
-        //roll the dice
-   let diceOne= Math.floor(Math.random() * 6) + 1;
-   let diceTwo= Math.floor(Math.random() * 6) + 1;
-   let diceThree= Math.floor(Math.random() * 6) + 1;
-   let diceFour= Math.floor(Math.random() * 6) + 1;
-   let diceFive= Math.floor(Math.random() * 6) + 1;
-   let diceSix= Math.floor(Math.random() * 6) + 1;
+    let diceRoll = [diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix];
+    console.log(diceRoll);
 
-   let diceRoll = [diceOne, diceTwo, diceThree, diceFour, diceFive,diceSix];
-   console.log(diceRoll);
-
-   //defining the
-   for (let i = 0; i <  diceRoll.length; i++) {
-    if (i === 1){
-        points = 100;
-    } else if (i === 5) {
-        points = 50;
+    //calculating the points
+    if (diceOne === 1) {
+        p1 = 100;
+    } else if (diceOne === 5) {
+        p1 = 50;
     } else {
-        points = 0;
+        p1 = 0;
     }
-    
-    console.log(points);
-  }
 
-   //display the result
+    if (diceTwo === 1) {
+        p2 = 100;
+    } else if (diceTwo === 5) {
+        p2 = 50;
+    } else {
+        p2 = 0;
+    }
 
-   document.getElementById("dice-one").src = "./assets/images/dice" + diceOne + ".png"; 
-   document.getElementById("dice-two").src = "./assets/images/dice" + diceTwo + ".png"; 
-   document.getElementById("dice-three").src = "./assets/images/dice" + diceThree + ".png"; 
-   document.getElementById("dice-four").src = "./assets/images/dice" + diceFour + ".png"; 
-   document.getElementById("dice-five").src = "./assets/images/dice" + diceFive + ".png"; 
-   document.getElementById("dice-six").src = "./assets/images/dice" + diceSix + ".png"
+    if (diceThree === 1) {
+        p3 = 100;
+    } else if (diceThree === 5) {
+        p3 = 50;
+    } else {
+        p3 = 0;
+    }
+
+    if (diceFour === 1) {
+        p4 = 100;
+    } else if (diceFour === 5) {
+        p4 = 50;
+    } else {
+        p4 = 0;
+    }
+
+    if (diceFive === 1) {
+        p5 = 100;
+    } else if (diceFive === 5) {
+        p5 = 50;
+    } else {
+        p5 = 0;
+    }
+
+    if (diceSix === 1) {
+        p6 = 100;
+    } else if (diceSix === 5) {
+        p6 = 50;
+    } else {
+        p6 = 0;
+    }
+
+    let totalPoints = p1 + p2 + p3 + p4 + p5 + p6;
+
+    console.log(totalPoints);
+
+
+    //display the result
+
+    document.getElementById("dice-one").src = "./assets/images/dice" + diceOne + ".png";
+    document.getElementById("dice-two").src = "./assets/images/dice" + diceTwo + ".png";
+    document.getElementById("dice-three").src = "./assets/images/dice" + diceThree + ".png";
+    document.getElementById("dice-four").src = "./assets/images/dice" + diceFour + ".png";
+    document.getElementById("dice-five").src = "./assets/images/dice" + diceFive + ".png";
+    document.getElementById("dice-six").src = "./assets/images/dice" + diceSix + ".png"
 
 }
 
