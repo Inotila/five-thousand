@@ -98,11 +98,16 @@ a {
 
 #play-zone {
     display: block;
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 50%;
     height: 50%;
     background-color: #eff14e;
+}
+
+#play-zone > img {
+    width: 8%;
 }
 
 
