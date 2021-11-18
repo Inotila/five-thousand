@@ -33,6 +33,19 @@ function rollDi() {
    let diceRoll = [diceOne, diceTwo, diceThree, diceFour, diceFive,diceSix];
    console.log(diceRoll);
 
+   //defining the
+   for (let i = 0; i <  diceRoll.length; i++) {
+    if (i === 1){
+        points = 100;
+    } else if (i === 5) {
+        points = 50;
+    } else {
+        points = 0;
+    }
+    
+    console.log(points);
+  }
+
    //display the result
 
    document.getElementById("dice-one").src = "./assets/images/dice" + diceOne + ".png"; 
@@ -41,6 +54,7 @@ function rollDi() {
    document.getElementById("dice-four").src = "./assets/images/dice" + diceFour + ".png"; 
    document.getElementById("dice-five").src = "./assets/images/dice" + diceFive + ".png"; 
    document.getElementById("dice-six").src = "./assets/images/dice" + diceSix + ".png"
+
 }
 
 function keepDi() {
