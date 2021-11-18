@@ -1,8 +1,8 @@
-/* body, h1 to h6, header, and footer */
+/* body,a, h1 to h6, header, and footer */
 
 body {
     font-family: Roboto, sans-serif;
-    font-weight: 300;
+    font-size: 120%;
     background-color: #fbff00;
     min-height: 100vh;
     position: relative;
@@ -11,9 +11,7 @@ body {
 }
 
 header {
-    overflow: hidden;
     width: 100%;
-    height: 15em;
 }
 
 footer {
@@ -23,6 +21,11 @@ footer {
     margin-top: auto;
     width: 100%;
     text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
 }
 
 /* homepage */
@@ -37,31 +40,46 @@ footer {
     width: 33%;
     display: block;
     margin-left: auto;
-    margin-right: auto;    
+    margin-right: auto;
+    margin-top: 10px;
 }
 
 #master-img {
     display: block;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
 }
 
 #welcome-text {
-    width: 33%;
     display: block;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
 }
 
-#welcome-text {
+#master-text {
     text-align: center;
 }
 
 #home-buttons {
-        display: block;
-        margin-left: auto;
-        margin-right: auto; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+.nav-buttons {
+    font-size: 130%;
+    width: 100px;
+    height: 75px;
+    margin: 10px;
+    border-radius: 30px;
+    border: 3px solid #000;
+    background-color: #fff;
+}
+
+.nav-buttons:hover {
+    background-color: #a0db16;
+}
+
 
 /*social media links */
 
@@ -74,7 +92,7 @@ footer {
 }
 
 .social-networks i {
-    font-size: 150%;
+    font-size: 200%;
     margin: 0;
     padding: 2%;
     color: #000;
