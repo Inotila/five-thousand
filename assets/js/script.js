@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function rollDi() {
-    alert("roll dice")
+    for (let i = 0; i <6; i++){
+       let roll = Math.floor(Math.random()*6)+1;
+        console.log(roll);
+    }
 }
 
 function keepDi() {
