@@ -33,6 +33,36 @@ footer {
     margin-right: auto;
 }
 
+#hero-img {
+    width: 33%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+#master-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#welcome-text {
+    width: 33%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+#welcome-text {
+    text-align: center;
+}
+
+#home-buttons {
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+}
+
 /*social media links */
 
 .social-networks {
