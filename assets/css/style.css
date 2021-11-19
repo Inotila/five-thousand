@@ -88,12 +88,9 @@ a {
     margin-right: auto;
 }
 
-#player-score {
+.score {
     float: left;
-}
-
-#cpu-score {
-    float: right;
+    padding: 0 10px;
 }
 
 #play-zone {
