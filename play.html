@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,29 +9,34 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Five Thousand</title>
 </head>
+
 <body>
     <header>
-    <img id="game-logo" src="./assets/images/game-logo.png" alt="logo">
+        <img id="game-logo" src="./assets/images/game-logo.png" alt="logo">
     </header>
-  <div id="score-keeper">
-      <div id="player-score"> your score: 0</div>
-      <div id="cpu-score"> Master Zen score: 0</div>
-  </div>
-  <div id="play-zone">
-     <img id="dice-one">
-     <img id="dice-two">
-     <img id="dice-three">
-     <br>
-     <img id="dice-four">
-     <img id="dice-five">
-     <img id="dice-six">
-     <div id="current-score">current score: </div>
-  </div>
-  <div class="control-buttons">
-      <button data-type="keep" class="play-buttons">KEEP</button>
-      <button data-type="play" class="play-buttons">ROLL</button>
-      <button data-type="stop" class="play-buttons">STOP</button>
-  </div>
+    <div id="score-keeper">
+        <p class="score"> Player Score: <span id="player-score">0</span>
+        </p>
+        <p class="score"> Master Zen Score: <span id="cpu-score">0</span>
+    </div>
+    </p>
+    <div id="play-zone">
+        <img id="dice-one">
+        <img id="dice-two">
+        <img id="dice-three">
+        <br>
+        <img id="dice-four">
+        <img id="dice-five">
+        <img id="dice-six">
+        <div id="turn-score">
+            <p>Current Score:<span id="current-score">0</span></p>
+        </div>
+    </div>
+    <div class="control-buttons">
+        <button data-type="keep" class="play-buttons">KEEP</button>
+        <button data-type="play" class="play-buttons">ROLL</button>
+        <button data-type="stop" class="play-buttons">STOP</button>
+    </div>
     <footer>
         <ul class="social-networks">
             <li>
@@ -54,4 +60,5 @@
     <script src="https://kit.fontawesome.com/c7dbda0798.js" crossorigin="anonymous"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
