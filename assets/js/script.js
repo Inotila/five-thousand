@@ -1,5 +1,8 @@
 //global variables that i want to be able to access in all functions
-var playerScore, cpuScore, currentPoints, addScore, player, cpu;
+var playerScore= 0;
+var cpuScore = 0;
+var currentPoints = 0;
+var addScore, player, cpu;
 
 
 
