@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function rollDi() {
-
-    console.log(playerScore);
     //roll the dice
     let diceOne = Math.floor(Math.random() * 6) + 1;
     let diceTwo = Math.floor(Math.random() * 6) + 1;
@@ -89,7 +87,7 @@ function rollDi() {
         p6 = 0;
     }
 
-    let currentPoints = p1 + p2 + p3 + p4 + p5 + p6;
+    currentPoints = p1 + p2 + p3 + p4 + p5 + p6;
 
     console.log(currentPoints);
 
@@ -111,7 +109,9 @@ function rollDi() {
 }
 
 function keepDi() {
-    alert("store these di")
+    playerScore =+currentPoints;
+
+    console.log(playerScore);
 }
 
 function endTurn() {
