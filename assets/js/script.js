@@ -1,10 +1,8 @@
 //global variables that i want to be able to access in all functions
-var playerScore= 0;
+var playerScore = 0;
 var cpuScore = 0;
 var currentPoints = 0;
-var addScore, player, cpu;
-
-
+var addScore, player, cpu, d1, d2, d3, d4, d5, d6;
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -33,8 +31,12 @@ function rollDi() {
     let diceFive = Math.floor(Math.random() * 6) + 1;
     let diceSix = Math.floor(Math.random() * 6) + 1;
 
-    let diceRoll = [diceOne, diceTwo, diceThree, diceFour, diceFive, diceSix];
-    console.log(diceRoll);
+    d1 = diceOne;
+    d2 = diceTwo;
+    d3 = diceThree;
+    d4 = diceFour;
+    d5 = diceFive;
+    d6 = diceSix;
 
     //calculating the points
     if (diceOne === 1) {
