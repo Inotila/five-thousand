@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function rollDi() {
+
+    console.log(playerScore);
     //roll the dice
     let diceOne = Math.floor(Math.random() * 6) + 1;
     let diceTwo = Math.floor(Math.random() * 6) + 1;
