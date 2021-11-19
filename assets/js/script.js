@@ -1,5 +1,7 @@
 //global variables that i want to be able to access in all functions
-var playerScore, cpuScore, currentScore, addScore, player, cpu;
+var playerScore, cpuScore, currentPoints, addScore, player, cpu;
+
+
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -80,27 +82,25 @@ function rollDi() {
         p6 = 0;
     }
 
-    let totalPoints = p1 + p2 + p3 + p4 + p5 + p6;
+    let currentPoints = p1 + p2 + p3 + p4 + p5 + p6;
 
-    console.log(totalPoints);
+    console.log(currentPoints);
 
-    function currentScore(){
-        let score =  parseInt(document.getElementById("current-score").innerText);
-        document.getElementById("current-score").innerText = totalPoints;
-
+    function currentScore() {
+        let score = parseInt(document.getElementById("current-score").innerHTML);
+        document.getElementById("current-score").innerHTML = currentPoints;
         return score;
     }
 
+    currentScore();
 
     //display the result
-
     document.getElementById("dice-one").src = "./assets/images/dice" + diceOne + ".png";
     document.getElementById("dice-two").src = "./assets/images/dice" + diceTwo + ".png";
     document.getElementById("dice-three").src = "./assets/images/dice" + diceThree + ".png";
     document.getElementById("dice-four").src = "./assets/images/dice" + diceFour + ".png";
     document.getElementById("dice-five").src = "./assets/images/dice" + diceFive + ".png";
     document.getElementById("dice-six").src = "./assets/images/dice" + diceSix + ".png"
-
 }
 
 function keepDi() {
