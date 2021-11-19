@@ -1,3 +1,6 @@
+//global variables that i want to be able to access in all functions
+var playerScore, cpuScore, currentScore, addScore, player, cpu;
+
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
     let buttons = document.getElementsByClassName("play-buttons");
@@ -80,6 +83,13 @@ function rollDi() {
     let totalPoints = p1 + p2 + p3 + p4 + p5 + p6;
 
     console.log(totalPoints);
+
+    function currentScore(){
+        let score =  parseInt(document.getElementById("current-score").innerText);
+        document.getElementById("current-score").innerText = totalPoints;
+
+        return score;
+    }
 
 
     //display the result
