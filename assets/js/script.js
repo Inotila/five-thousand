@@ -89,7 +89,7 @@ function rollDi() {
 
     currentPoints = p1 + p2 + p3 + p4 + p5 + p6;
 
-    console.log("this is the players current score:" +currentPoints);
+    console.log("this is the players current score:" + currentPoints);
 
     function currentScore() {
         let score = parseInt(document.getElementById("current-score").innerHTML);
@@ -106,20 +106,30 @@ function rollDi() {
     document.getElementById("dice-four").src = "./assets/images/dice" + diceFour + ".png";
     document.getElementById("dice-five").src = "./assets/images/dice" + diceFive + ".png";
     document.getElementById("dice-six").src = "./assets/images/dice" + diceSix + ".png"
+
+    player = true;
 }
 
 function keepDi() {
     playerScore =+ currentPoints;
-    
-
     console.log("this is the players score:" + playerScore);
-    let Updatescore = parseInt(document.getElementById("player-score").innerHTML);
+    
+    newScore();
+    
+    function newScore(){
+        let Updatescore = parseInt(document.getElementById("player-score").innerHTML);
         document.getElementById("player-score").innerHTML = playerScore;
-        return Updatescore;
+        return Updatescore;}
+
 }
 
 function endTurn() {
     alert("end of turn")
+    player = false;
+
+    if (player === false) {
+        console.log("nmasters turn!")
+    }
 }
 
 function score(params) {
@@ -135,5 +145,7 @@ function subScore() {
 }
 
 function masterTurn() {
-
+if ( player === false) {
+    console.log("masters turn!");
+}
 }
