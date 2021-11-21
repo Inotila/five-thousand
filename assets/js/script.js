@@ -2,6 +2,7 @@
 var playerScore = 0;
 var cpuScore = 0;
 var currentPoints = 0;
+var zenCurrentPoints = 0;
 var addScore, player, cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
 
 //wait for the dom to finish loading
@@ -117,9 +118,9 @@ function keepDi() {
     newScore();
 
     function newScore() {
-        let Updatescore = parseInt(document.getElementById("player-score").innerHTML);
+        let updateScore = parseInt(document.getElementById("player-score").innerHTML);
         document.getElementById("player-score").innerHTML = playerScore;
-        return Updatescore;
+        return updateScore;
     }
 
 }
@@ -136,8 +137,6 @@ function endTurn() {
 
     function masterTurn() {
         if (player === false) {
-            console.log("masters turn!");
-
             let zenDiceOne = Math.floor(Math.random() * 6) + 1;
             let zenDiceTwo = Math.floor(Math.random() * 6) + 1;
             let ZenDiceThree = Math.floor(Math.random() * 6) + 1;
@@ -203,15 +202,26 @@ function endTurn() {
 
             zenCurrentPoints = p1 + p2 + p3 + p4 + p5 + p6;
 
-            console.log("this is the players current score:" + zenCurrentPoints);
+            console.log("this is the Zens current score:" + zenCurrentPoints);
 
             function zenPoints() {
                 let ZenScore = parseInt(document.getElementById("current-score").innerHTML);
                 document.getElementById("current-score").innerHTML = zenCurrentPoints;
-                return score;
+                return ZenScore;
             }
 
             zenPoints();
+
+            cpuScore =+ zenCurrentPoints;
+            console.log("this is the zen score:" + cpuScore);
+
+            newZenScore();
+
+            function newZenScore() {
+                let updateZenScore = parseInt(document.getElementById("cpu-score").innerHTML);
+                document.getElementById("cpu-score").innerHTML = cpuScore;
+                return updateZenScore;
+            }
 
         }
     }
