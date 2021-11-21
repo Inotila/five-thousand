@@ -3,6 +3,7 @@ var playerScore = 0;
 var cpuScore = 0;
 var currentPoints = 0;
 var zenCurrentPoints = 0;
+var rollCounter = 0;
 var addScore, player, cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
 
 //wait for the dom to finish loading
