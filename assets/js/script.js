@@ -112,7 +112,7 @@ function rollDi() {
 }
 
 function keepDi() {
-    playerScore = +currentPoints;
+    playerScore = playerScore  + currentPoints;
     console.log("this is the players score:" + playerScore);
 
     newScore();
