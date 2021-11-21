@@ -89,7 +89,7 @@ function rollDi() {
 
     currentPoints = p1 + p2 + p3 + p4 + p5 + p6;
 
-    console.log(currentPoints);
+    console.log("this is the players current score:" +currentPoints);
 
     function currentScore() {
         let score = parseInt(document.getElementById("current-score").innerHTML);
@@ -112,7 +112,7 @@ function keepDi() {
     playerScore =+ currentPoints;
     
 
-    console.log(playerScore);
+    console.log("this is the players score:" + playerScore);
     let Updatescore = parseInt(document.getElementById("player-score").innerHTML);
         document.getElementById("player-score").innerHTML = playerScore;
         return Updatescore;
