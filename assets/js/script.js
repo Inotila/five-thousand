@@ -109,9 +109,13 @@ function rollDi() {
 }
 
 function keepDi() {
-    playerScore =+currentPoints;
+    playerScore =+ currentPoints;
+    
 
     console.log(playerScore);
+    let Updatescore = parseInt(document.getElementById("player-score").innerHTML);
+        document.getElementById("player-score").innerHTML = playerScore;
+        return Updatescore;
 }
 
 function endTurn() {
