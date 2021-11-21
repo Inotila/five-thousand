@@ -111,15 +111,16 @@ function rollDi() {
 }
 
 function keepDi() {
-    playerScore =+ currentPoints;
+    playerScore = +currentPoints;
     console.log("this is the players score:" + playerScore);
-    
+
     newScore();
-    
-    function newScore(){
+
+    function newScore() {
         let Updatescore = parseInt(document.getElementById("player-score").innerHTML);
         document.getElementById("player-score").innerHTML = playerScore;
-        return Updatescore;}
+        return Updatescore;
+    }
 
 }
 
@@ -134,9 +135,9 @@ function endTurn() {
     masterTurn();
 
     function masterTurn() {
-        if ( player === false) {
+        if (player === false) {
             console.log("masters turn!");
-        
+
             let zenDiceOne = Math.floor(Math.random() * 6) + 1;
             let zenDiceTwo = Math.floor(Math.random() * 6) + 1;
             let ZenDiceThree = Math.floor(Math.random() * 6) + 1;
@@ -150,8 +151,70 @@ function endTurn() {
             zD4 = ZenDiceFour;
             zD5 = ZenDiceFive;
             zD6 = ZenDiceSix;
+
+            //calculating the points
+            if (zenDiceOne === 1) {
+                p1 = 100;
+            } else if (zenDiceOne === 5) {
+                p1 = 50;
+            } else {
+                p1 = 0;
+            }
+
+            if (zenDiceTwo === 1) {
+                p2 = 100;
+            } else if (zenDiceTwo === 5) {
+                p2 = 50;
+            } else {
+                p2 = 0;
+            }
+
+            if (ZenDiceThree === 1) {
+                p3 = 100;
+            } else if (ZenDiceThree === 5) {
+                p3 = 50;
+            } else {
+                p3 = 0;
+            }
+
+            if (ZenDiceFour === 1) {
+                p4 = 100;
+            } else if (ZenDiceFour === 5) {
+                p4 = 50;
+            } else {
+                p4 = 0;
+            }
+
+            if (ZenDiceFive === 1) {
+                p5 = 100;
+            } else if (ZenDiceFive === 5) {
+                p5 = 50;
+            } else {
+                p5 = 0;
+            }
+
+            if (ZenDiceSix === 1) {
+                p6 = 100;
+            } else if (ZenDiceSix === 5) {
+                p6 = 50;
+            } else {
+                p6 = 0;
+            }
+
+            zenCurrentPoints = p1 + p2 + p3 + p4 + p5 + p6;
+
+            console.log("this is the Zens current score:" + zenCurrentPoints);
+
+            function currentScore() {
+                let score = parseInt(document.getElementById("cpu-score").innerHTML);
+                document.getElementById("cpu-score").innerHTML = zenCurrentPoints;
+                return score;
+            }
+
+            currentScore();
+
         }
-        }
+    }
 }
 
 function score(params) {
