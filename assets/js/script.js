@@ -212,7 +212,7 @@ function endTurn() {
 
             zenPoints();
 
-            cpuScore =+ zenCurrentPoints;
+            cpuScore =  cpuScore + zenCurrentPoints;
             console.log("this is the zen score:" + cpuScore);
 
             newZenScore();
