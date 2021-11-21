@@ -2,7 +2,7 @@
 var playerScore = 0;
 var cpuScore = 0;
 var currentPoints = 0;
-var addScore, player, cpu, d1, d2, d3, d4, d5, d6;
+var addScore, player, cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -130,6 +130,28 @@ function endTurn() {
     if (player === false) {
         console.log("nmasters turn!")
     }
+
+    masterTurn();
+
+    function masterTurn() {
+        if ( player === false) {
+            console.log("masters turn!");
+        
+            let zenDiceOne = Math.floor(Math.random() * 6) + 1;
+            let zenDiceTwo = Math.floor(Math.random() * 6) + 1;
+            let ZenDiceThree = Math.floor(Math.random() * 6) + 1;
+            let ZenDiceFour = Math.floor(Math.random() * 6) + 1;
+            let ZenDiceFive = Math.floor(Math.random() * 6) + 1;
+            let ZenDiceSix = Math.floor(Math.random() * 6) + 1;
+
+            zD1 = zenDiceOne;
+            zD2 = zenDiceTwo;
+            zD3 = ZenDiceThree;
+            zD4 = ZenDiceFour;
+            zD5 = ZenDiceFive;
+            zD6 = ZenDiceSix;
+        }
+        }
 }
 
 function score(params) {
@@ -142,10 +164,4 @@ function addScore(params) {
 
 function subScore() {
 
-}
-
-function masterTurn() {
-if ( player === false) {
-    console.log("masters turn!");
-}
 }
