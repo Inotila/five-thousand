@@ -203,15 +203,15 @@ function endTurn() {
 
             zenCurrentPoints = p1 + p2 + p3 + p4 + p5 + p6;
 
-            console.log("this is the Zens current score:" + zenCurrentPoints);
+            console.log("this is the players current score:" + zenCurrentPoints);
 
-            function currentScore() {
-                let score = parseInt(document.getElementById("cpu-score").innerHTML);
-                document.getElementById("cpu-score").innerHTML = zenCurrentPoints;
+            function zenPoints() {
+                let ZenScore = parseInt(document.getElementById("current-score").innerHTML);
+                document.getElementById("current-score").innerHTML = zenCurrentPoints;
                 return score;
             }
 
-            currentScore();
+            zenPoints();
 
         }
     }
