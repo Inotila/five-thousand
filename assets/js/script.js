@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
+function clickCount(){
+    rollCounter =  rollCounter + 1;
+    console.log(rollCounter);
+}
+
 function rollDi() {
     //roll the dice
     let diceOne = Math.floor(Math.random() * 6) + 1;
