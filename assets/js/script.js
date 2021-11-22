@@ -77,6 +77,12 @@ function rollDi() {
     currentScore();
 
     //display the result
+    dices.map((item, index) => {
+        console.log("this is what you see: ", item.elementId, item.imgSrc);
+        return (document.getElementById(
+          item.elementId
+        ).src = `./assets/images/${item.imgSrc}`);
+      });
 
     player = true;
 }
