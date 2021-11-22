@@ -35,11 +35,10 @@ function clickCount() {
     console.log("player rolled" + rollCounter + "times");
 
     rollNumberLimit();
-
     function rollNumberLimit() {
         if (rollCounter === 3) {
             document.getElementById("roll-button").disabled = true;
-        }
+        } 
     }
 }
 
@@ -98,6 +97,9 @@ function rollDi() {
     });
 
     playerRolled = true;
+    if (playerRolled === true) {
+        document.getElementById("keep-button").disabled = false;
+    }
 }
 
 function keepDi() {
@@ -107,11 +109,16 @@ function keepDi() {
     console.log("this is the players score:" + playerScore);
 
     newScore();
-
     function newScore() {
         let updateScore = parseInt(document.getElementById("player-score").innerHTML);
         document.getElementById("player-score").innerHTML = playerScore;
         return updateScore;
+    }
+
+    if (keepClicked === true) {
+        document.getElementById("keep-button").disabled = true;
+        document.getElementById("roll-button").disabled = true;
+
     }
 }
 
