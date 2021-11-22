@@ -47,59 +47,27 @@ function rollDi() {
             };
         });
 
-
-
-
     //calculating the points
-    if (diceOne === 1) {
-        p1 = 100;
-    } else if (diceOne === 5) {
-        p1 = 50;
-    } else {
-        p1 = 0;
-    }
+    dices.map((dice, _index) => {
+        let diceWithOnes = dices.filter((item, index) => item.number === 1);
+        let diceWithFives = dices.filter((item, index) => item.number === 5);
 
-    if (diceTwo === 1) {
-        p2 = 100;
-    } else if (diceTwo === 5) {
-        p2 = 50;
-    } else {
-        p2 = 0;
-    }
+        if (diceWithOnes.length >= 3 && index === 0) {
+            currentPoints = currentPoints + 1000;
+          } else if (diceWithFives.length >= 3  && index === 0) {
+            currentPoints = currentPoints + 500;
+          }
 
-    if (diceThree === 1) {
-        p3 = 100;
-    } else if (diceThree === 5) {
-        p3 = 50;
-    } else {
-        p3 = 0;
-    }
+          if (dice.number === 1 && diceWithOnes.length < 3) {
+            currentPoints = currentPoints + 100;
+          } else if (dice.number === 5 && diceWithFives.length < 3) {
+            currentPoints = currentPoints + 50;
+          } else {
+            currentPoints = currentPoints + 0;
+          }
 
-    if (diceFour === 1) {
-        p4 = 100;
-    } else if (diceFour === 5) {
-        p4 = 50;
-    } else {
-        p4 = 0;
-    }
 
-    if (diceFive === 1) {
-        p5 = 100;
-    } else if (diceFive === 5) {
-        p5 = 50;
-    } else {
-        p5 = 0;
-    }
-
-    if (diceSix === 1) {
-        p6 = 100;
-    } else if (diceSix === 5) {
-        p6 = 50;
-    } else {
-        p6 = 0;
-    }
-
-    currentPoints = p1 + p2 + p3 + p4 + p5 + p6;
+    });
 
     console.log("this is the players current score:" + currentPoints);
 
