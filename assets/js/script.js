@@ -6,7 +6,7 @@ var zenCurrentPoints = 0;
 var rollCounter = 1;
 var keepClicked = false;
 var playerRolled = false;
-var addScore,  cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
+var addScore, cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -29,12 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
 clickCount();
 
 function clickCount() {
-    if ( playerRolled === true){
+    if (playerRolled === true) {
         rollCounter = rollCounter + 1;
     }
     console.log("player rolled" + rollCounter + "times");
 
     rollNumberLimit();
+
     function rollNumberLimit() {
         if (rollCounter === 3) {
             document.getElementById("roll-button").disabled = true;
@@ -119,30 +120,46 @@ function endTurn() {
     alert("end of turn")
     playerRolled = false;
 
-    if (playerRolled === false) {
-        console.log("nmasters turn!")
-    }
-
     masterTurn();
 
     function masterTurn() {
-        if (player === false) {
+        if (playerRolled === false) {
             zenCurrentPoints = 0;
 
             let zenDices = ["one", "two", "three", "four", "five", "six"].map(
                 (item, index) => {
                     let zenRandomNumber = Math.floor(Math.random() * 6) + 1;
                     let zenElementId = `dice-${item}`;
-        
+
                     return {
-                        zenElementId: zenElementI,
-                        imgSrc: `dice${randomNumber}.png`,
+                        zenElementId: zenElementId,
+                        imgSrc: `dice${ zenRandomNumber}.png`,
                         index: index + 1,
                         number: zenRandomNumber
                     };
                 });
-            
-          
+
+
+                zenDices.map((dice, _index) => {
+                let zenDiceWithOnes = zenDices.filter((item, index) => item.number === 1);
+                let zenDiceWithFives = zenDices.filter((item, index) => item.number === 5);
+
+                if ( zenDiceWithOnes.length >= 3 && _index === 0) {
+                    zenCurrentPoints = zenCurrentPoints + 1000;
+                } else if (zenDiceWithFives.length >= 3 && _index === 0) {
+                    zenCurrentPointss = zenCurrentPoints + 500;
+                }
+
+                if (zenDices.number === 1 && zenDiceWithOnes.length < 3) {
+                    zenCurrentPoints = zenCurrentPoints + 100;
+                } else if (dice.number === 5 && zenDiceWithFives.length < 3) {
+                    zenCurrentPoints = zenCurrentPoints + 50;
+                } else {
+                    zenCurrentPoints = zenCurrentPoints + 0;
+                }
+            });
+
+
             console.log("this is the Zens current score:" + zenCurrentPoints);
 
             function zenPoints() {
