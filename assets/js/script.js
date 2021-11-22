@@ -25,14 +25,31 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
-function clickCount(){
-    rollCounter =  rollCounter + 1;
+function clickCount() {
+    rollCounter = rollCounter + 1;
     console.log(rollCounter);
 }
 
 function rollDi() {
     //roll the dice
-    
+    currentPoints = 0;
+
+    let dices = ["one", "two", "three", "four", "five", "six"].map(
+        (item, index) => {
+            let randomNumber = Math.floor(Math.random() * 6) + 1;
+            let elementId = `dice-${item}`;
+
+            return {
+                elementId: elementId,
+                imgSrc: `dice${randomNumber}.png`,
+                index: index + 1,
+                number: randomNumber
+            };
+        });
+
+
+
+
     //calculating the points
     if (diceOne === 1) {
         p1 = 100;
@@ -106,7 +123,7 @@ function rollDi() {
 }
 
 function keepDi() {
-    playerScore = playerScore  + currentPoints;
+    playerScore = playerScore + currentPoints;
     console.log("this is the players score:" + playerScore);
 
     newScore();
@@ -206,7 +223,7 @@ function endTurn() {
 
             zenPoints();
 
-            cpuScore =  cpuScore + zenCurrentPoints;
+            cpuScore = cpuScore + zenCurrentPoints;
             console.log("this is the zen score:" + cpuScore);
 
             newZenScore();
