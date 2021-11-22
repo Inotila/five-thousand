@@ -32,20 +32,7 @@ function clickCount(){
 
 function rollDi() {
     //roll the dice
-    let diceOne = Math.floor(Math.random() * 6) + 1;
-    let diceTwo = Math.floor(Math.random() * 6) + 1;
-    let diceThree = Math.floor(Math.random() * 6) + 1;
-    let diceFour = Math.floor(Math.random() * 6) + 1;
-    let diceFive = Math.floor(Math.random() * 6) + 1;
-    let diceSix = Math.floor(Math.random() * 6) + 1;
-
-    d1 = diceOne;
-    d2 = diceTwo;
-    d3 = diceThree;
-    d4 = diceFour;
-    d5 = diceFive;
-    d6 = diceSix;
-
+    
     //calculating the points
     if (diceOne === 1) {
         p1 = 100;
