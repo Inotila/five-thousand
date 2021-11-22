@@ -101,7 +101,7 @@ function rollDi() {
 
 function keepDi() {
     keepClicked = true;
-    rollCounter = 0;
+    rollCounter = 1;
     playerScore = playerScore + currentPoints;
     console.log("this is the players score:" + playerScore);
 
@@ -117,9 +117,9 @@ function keepDi() {
 
 function endTurn() {
     alert("end of turn")
-    player = false;
+    playerRolled = false;
 
-    if (player === false) {
+    if (playerRolled === false) {
         console.log("nmasters turn!")
     }
 
