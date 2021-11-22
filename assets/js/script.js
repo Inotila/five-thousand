@@ -52,9 +52,9 @@ function rollDi() {
         let diceWithOnes = dices.filter((item, index) => item.number === 1);
         let diceWithFives = dices.filter((item, index) => item.number === 5);
 
-        if (diceWithOnes.length >= 3 && index === 0) {
+        if (diceWithOnes.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 1000;
-        } else if (diceWithFives.length >= 3 && index === 0) {
+        } else if (diceWithFives.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 500;
         }
 
@@ -80,14 +80,16 @@ function rollDi() {
     dices.map((item, index) => {
         console.log("this is what you see: ", item.elementId, item.imgSrc);
         return (document.getElementById(
-          item.elementId
+            item.elementId
         ).src = `./assets/images/${item.imgSrc}`);
-      });
+    });
 
     player = true;
 }
 
 function keepDi() {
+    keepClicked = true;
+    rollCounter = 0;
     playerScore = playerScore + currentPoints;
     console.log("this is the players score:" + playerScore);
 
@@ -98,8 +100,12 @@ function keepDi() {
         document.getElementById("player-score").innerHTML = playerScore;
         return updateScore;
     }
-
 }
+
+function rollNumberLimit() {
+    
+}
+
 
 function endTurn() {
     alert("end of turn")
