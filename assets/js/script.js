@@ -54,19 +54,17 @@ function rollDi() {
 
         if (diceWithOnes.length >= 3 && index === 0) {
             currentPoints = currentPoints + 1000;
-          } else if (diceWithFives.length >= 3  && index === 0) {
+        } else if (diceWithFives.length >= 3 && index === 0) {
             currentPoints = currentPoints + 500;
-          }
+        }
 
-          if (dice.number === 1 && diceWithOnes.length < 3) {
+        if (dice.number === 1 && diceWithOnes.length < 3) {
             currentPoints = currentPoints + 100;
-          } else if (dice.number === 5 && diceWithFives.length < 3) {
+        } else if (dice.number === 5 && diceWithFives.length < 3) {
             currentPoints = currentPoints + 50;
-          } else {
+        } else {
             currentPoints = currentPoints + 0;
-          }
-
-
+        }
     });
 
     console.log("this is the players current score:" + currentPoints);
@@ -76,16 +74,9 @@ function rollDi() {
         document.getElementById("current-score").innerHTML = currentPoints;
         return score;
     }
-
     currentScore();
 
     //display the result
-    document.getElementById("dice-one").src = "./assets/images/dice" + diceOne + ".png";
-    document.getElementById("dice-two").src = "./assets/images/dice" + diceTwo + ".png";
-    document.getElementById("dice-three").src = "./assets/images/dice" + diceThree + ".png";
-    document.getElementById("dice-four").src = "./assets/images/dice" + diceFour + ".png";
-    document.getElementById("dice-five").src = "./assets/images/dice" + diceFive + ".png";
-    document.getElementById("dice-six").src = "./assets/images/dice" + diceSix + ".png"
 
     player = true;
 }
