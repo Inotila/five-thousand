@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
+startingOptions ();
+
+function startingOptions () {
+    document.getElementById("stop-button").disabled = true;
+    document.getElementById("keep-button").disabled = true;
+    document.getElementById("roll-button").disabled = false;
+}
+
 clickCount();
 
 function clickCount() {
