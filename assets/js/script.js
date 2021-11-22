@@ -117,7 +117,6 @@ function keepDi() {
 
 
 function endTurn() {
-    alert("end of turn")
     playerRolled = false;
 
     masterTurn();
@@ -140,19 +139,20 @@ function endTurn() {
                 });
 
 
-                zenDices.map((dice, _index) => {
+            //calculating the points
+            zenDices.map((dice, _index) => {
                 let zenDiceWithOnes = zenDices.filter((item, index) => item.number === 1);
-                let zenDiceWithFives = zenDices.filter((item, index) => item.number === 5);
+                let diceWithFives = zenDices.filter((item, index) => item.number === 5);
 
-                if ( zenDiceWithOnes.length >= 3 && _index === 0) {
+                if (zenDiceWithOnes.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 1000;
-                } else if (zenDiceWithFives.length >= 3 && _index === 0) {
-                    zenCurrentPointss = zenCurrentPoints + 500;
+                } else if (diceWithFives.length >= 3 && _index === 0) {
+                    zenCurrentPoints = zenCurrentPoints + 500;
                 }
 
-                if (zenDices.number === 1 && zenDiceWithOnes.length < 3) {
-                    zenCurrentPoints = zenCurrentPoints + 100;
-                } else if (dice.number === 5 && zenDiceWithFives.length < 3) {
+                if ( dice.number === 1 && zenDiceWithOnes.length < 3) {
+                    zenCurrentPoints =  zenCurrentPoints + 100;
+                } else if (dice.number === 5 && diceWithFives.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 50;
                 } else {
                     zenCurrentPoints = zenCurrentPoints + 0;
@@ -181,18 +181,17 @@ function endTurn() {
                 return updateZenScore;
             }
 
+            //display the result
+            zenDices.map((item, index) => {
+                console.log("this is what you see: ", item.zenElementId, item.imgSrc);
+                return (document.getElementById(
+                    item.zenElementId
+                ).src = `./assets/images/${item.imgSrc}`);
+            });
         }
+
+        playerRolled = true;
+        console.log(playerRolled);
+
     }
-}
-
-function score(params) {
-
-}
-
-function addScore(params) {
-
-}
-
-function subScore() {
-
 }
