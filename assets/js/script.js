@@ -127,6 +127,21 @@ function endTurn() {
 
     function masterTurn() {
         if (player === false) {
+            zenCurrentPoints = 0;
+
+            let zenDices = ["one", "two", "three", "four", "five", "six"].map(
+                (item, index) => {
+                    let zenRandomNumber = Math.floor(Math.random() * 6) + 1;
+                    let zenElementId = `dice-${item}`;
+        
+                    return {
+                        zenElementId: zenElementI,
+                        imgSrc: `dice${randomNumber}.png`,
+                        index: index + 1,
+                        number: zenRandomNumber
+                    };
+                });
+            
           
             console.log("this is the Zens current score:" + zenCurrentPoints);
 
