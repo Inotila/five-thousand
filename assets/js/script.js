@@ -3,9 +3,10 @@ var playerScore = 0;
 var cpuScore = 0;
 var currentPoints = 0;
 var zenCurrentPoints = 0;
-var rollCounter = 0;
+var rollCounter = 1;
 var keepClicked = false;
-var addScore, player, cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
+var playerRolled = false;
+var addScore,  cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -25,9 +26,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
+clickCount();
+
 function clickCount() {
-    rollCounter = rollCounter + 1;
-    console.log(rollCounter);
+    if ( playerRolled === true){
+        rollCounter = rollCounter + 1;
+    }
+    console.log("player rolled" + rollCounter + "times");
+
+    rollNumberLimit();
+    function rollNumberLimit() {
+        if (rollCounter === 3) {
+            document.getElementById("roll-button").disabled = true;
+        }
+    }
 }
 
 function rollDi() {
@@ -84,7 +96,7 @@ function rollDi() {
         ).src = `./assets/images/${item.imgSrc}`);
     });
 
-    player = true;
+    playerRolled = true;
 }
 
 function keepDi() {
@@ -100,10 +112,6 @@ function keepDi() {
         document.getElementById("player-score").innerHTML = playerScore;
         return updateScore;
     }
-}
-
-function rollNumberLimit() {
-    
 }
 
 
