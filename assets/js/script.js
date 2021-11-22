@@ -35,10 +35,11 @@ function clickCount() {
     console.log("player rolled" + rollCounter + "times");
 
     rollNumberLimit();
+
     function rollNumberLimit() {
         if (rollCounter === 3) {
             document.getElementById("roll-button").disabled = true;
-        } 
+        }
     }
 }
 
@@ -109,6 +110,7 @@ function keepDi() {
     console.log("this is the players score:" + playerScore);
 
     newScore();
+
     function newScore() {
         let updateScore = parseInt(document.getElementById("player-score").innerHTML);
         document.getElementById("player-score").innerHTML = playerScore;
@@ -118,6 +120,7 @@ function keepDi() {
     if (keepClicked === true) {
         document.getElementById("keep-button").disabled = true;
         document.getElementById("roll-button").disabled = true;
+        document.getElementById("stop-button").disabled = false;
 
     }
 }
@@ -157,8 +160,8 @@ function endTurn() {
                     zenCurrentPoints = zenCurrentPoints + 500;
                 }
 
-                if ( dice.number === 1 && zenDiceWithOnes.length < 3) {
-                    zenCurrentPoints =  zenCurrentPoints + 100;
+                if (dice.number === 1 && zenDiceWithOnes.length < 3) {
+                    zenCurrentPoints = zenCurrentPoints + 100;
                 } else if (dice.number === 5 && diceWithFives.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 50;
                 } else {
@@ -196,9 +199,15 @@ function endTurn() {
                 ).src = `./assets/images/${item.imgSrc}`);
             });
         }
-
+        rollCounter = 0;
         playerRolled = true;
         console.log(playerRolled);
+
+        if (playerRolled === true) {
+            document.getElementById("keep-button").disabled = true;
+            document.getElementById("roll-button").disabled = false;
+            document.getElementById("stop-button").disabled = true;
+        }
 
     }
 }
