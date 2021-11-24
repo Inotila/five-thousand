@@ -140,6 +140,11 @@ a {
     background-color: #a0db16;
 }
 
+.play-buttons:disabled:hover {
+    background-color: #fff;
+}
+
+
 /*social media links */
 
 .social-networks {
