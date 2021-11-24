@@ -60,7 +60,7 @@ function clickCount() {
 
 //sound effects
 function play() {
-        audio.play();
+    audio.play();
 }
 
 function rollDi() {
@@ -159,12 +159,14 @@ function endTurn() {
     playerRolled = false;
 
     masterTurn();
-    
- //cpu logic
- let i = 0;
- while( i > 3 && zenCurrentPoints >= 150) {
-    masterTurn() + i; i++;
- }
+
+    //cpu logic so that it too gets 3 rolls and rolls again if it gets a score less than 150 to make it compete
+    let i = 0;
+    while (i > 3 && zenCurrentPoints >= 150) {
+        masterTurn() + i;
+        i++;
+    }
+
     function masterTurn() {
         if (playerRolled === false) {
             zenCurrentPoints = 0;
@@ -182,19 +184,23 @@ function endTurn() {
                     };
                 });
 
-               
-                
-
             //calculating the points
             zenDices.map((dice, _index) => {
                 let zenDiceWithOnes = zenDices.filter((item, index) => item.number === 1);
                 let diceWithFives = zenDices.filter((item, index) => item.number === 5);
+                let zenDiceWithoutOnes = zenDices.filter((item, index) => item.number !== 1);
+                let zenDiceWithoutFives = zenDices.filter((item, index) => item.number !== 5);
 
                 if (zenDiceWithOnes.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 1000;
                 } else if (diceWithFives.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 500;
+                } else if ( zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
+                    zenCurrentPoints = zenCurrentPoints + 0;
+                    zenRandomNumber = 0;
+                    console.log("end zen turn!")
                 }
+        
 
                 if (dice.number === 1 && zenDiceWithOnes.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 100;
