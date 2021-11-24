@@ -154,6 +154,21 @@ a {
     background-color: #fff;
 }
 
+/*rules page */
+
+#rules-page {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#master-rules-img {
+    float: left;
+}
+
+#rules-text {
+    text-align: center;
+}
 
 /*social media links */
 
