@@ -99,8 +99,9 @@ a {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
-    height: auto;
+    min-height: 342.156px;
     background-color: #eff14e;
+    background-image: url('../images/back-drop.jpg');
 }
 
 #play-zone > img {
