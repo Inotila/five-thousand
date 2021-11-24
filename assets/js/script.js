@@ -106,7 +106,6 @@ function rollDi() {
         } else {
             currentPoints = currentPoints + 0;
         }
-
     });
 
     console.log("player's current score:" + currentPoints);
@@ -160,7 +159,12 @@ function endTurn() {
     playerRolled = false;
 
     masterTurn();
-
+    
+ //cpu logic
+ let i = 0;
+ while( i > 3 && zenCurrentPoints >= 150) {
+    masterTurn() + i; i++;
+ }
     function masterTurn() {
         if (playerRolled === false) {
             zenCurrentPoints = 0;
@@ -178,6 +182,8 @@ function endTurn() {
                     };
                 });
 
+               
+                
 
             //calculating the points
             zenDices.map((dice, _index) => {
