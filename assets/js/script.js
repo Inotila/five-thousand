@@ -221,9 +221,13 @@ function endTurn() {
 function winner() {
     if (playerScore <=5000) {
         console.log("Player wins");
+        playerScore = 0;
+        ZenScore = 0;
     } else if (cpuScore <= 5000) {
         console.log("Mazer Zen wins");
     } else {
         console.log("still waiting for a winner");
+        playerScore = 0;
+        ZenScore = 0;
     }
 }
