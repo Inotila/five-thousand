@@ -187,15 +187,15 @@ function endTurn() {
             //calculating the points
             zenDices.map((dice, _index) => {
                 let zenDiceWithOnes = zenDices.filter((item, index) => item.number === 1);
-                let diceWithFives = zenDices.filter((item, index) => item.number === 5);
+                let zenDiceWithFives = zenDices.filter((item, index) => item.number === 5);
                 let zenDiceWithoutOnes = zenDices.filter((item, index) => item.number !== 1);
                 let zenDiceWithoutFives = zenDices.filter((item, index) => item.number !== 5);
 
                 if (zenDiceWithOnes.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 1000;
-                } else if (diceWithFives.length >= 3 && _index === 0) {
+                } else if (zenDiceWithFives.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 500;
-                } else if ( zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
+                } else if (zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 0;
                     zenRandomNumber = 0;
                     console.log("end zen turn!")
@@ -204,7 +204,7 @@ function endTurn() {
 
                 if (dice.number === 1 && zenDiceWithOnes.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 100;
-                } else if (dice.number === 5 && diceWithFives.length < 3) {
+                } else if (dice.number === 5 && zenDiceWithFives.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 50;
                 } else {
                     zenCurrentPoints = zenCurrentPoints + 0;
