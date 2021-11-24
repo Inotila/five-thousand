@@ -6,7 +6,7 @@ var zenCurrentPoints = 0;
 var rollCounter = 1;
 var keepClicked = false;
 var playerRolled = false;
-var addScore, cpu;
+var cpu;
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,9 +26,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
-startingOptions ();
+startingOptions();
+winner();
 
-function startingOptions () {
+function startingOptions() {
     document.getElementById("stop-button").disabled = true;
     document.getElementById("keep-button").disabled = true;
     document.getElementById("roll-button").disabled = false;
@@ -88,7 +89,7 @@ function rollDi() {
         }
     });
 
-    console.log("this is the players current score:" + currentPoints);
+    console.log("player's current score:" + currentPoints);
 
     function currentScore() {
         let score = parseInt(document.getElementById("current-score").innerHTML);
@@ -99,7 +100,6 @@ function rollDi() {
 
     //display the result
     dices.map((item, index) => {
-        console.log("this is what you see: ", item.elementId, item.imgSrc);
         return (document.getElementById(
             item.elementId
         ).src = `./assets/images/${item.imgSrc}`);
@@ -115,7 +115,7 @@ function keepDi() {
     keepClicked = true;
     rollCounter = 1;
     playerScore = playerScore + currentPoints;
-    console.log("this is the players score:" + playerScore);
+    console.log("player's score:" + playerScore);
 
     newScore();
 
@@ -201,7 +201,6 @@ function endTurn() {
 
             //display the result
             zenDices.map((item, index) => {
-                console.log("this is what you see: ", item.zenElementId, item.imgSrc);
                 return (document.getElementById(
                     item.zenElementId
                 ).src = `./assets/images/${item.imgSrc}`);
@@ -209,7 +208,6 @@ function endTurn() {
         }
         rollCounter = 0;
         playerRolled = true;
-        console.log(playerRolled);
 
         if (playerRolled === true) {
             document.getElementById("keep-button").disabled = true;
@@ -217,5 +215,15 @@ function endTurn() {
             document.getElementById("stop-button").disabled = true;
         }
 
+    }
+}
+
+function winner() {
+    if (playerScore <=5000) {
+        console.log("Player wins");
+    } else if (cpuScore <= 5000) {
+        console.log("Mazer Zen wins");
+    } else {
+        console.log("still waiting for a winner");
     }
 }
