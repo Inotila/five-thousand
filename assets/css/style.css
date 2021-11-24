@@ -106,6 +106,8 @@ a {
 
 #play-zone > img {
     width: 133px;
+    position: relative;
+    top: 10px;
 }
 
 
