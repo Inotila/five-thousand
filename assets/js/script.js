@@ -6,7 +6,7 @@ var zenCurrentPoints = 0;
 var rollCounter = 1;
 var keepClicked = false;
 var playerRolled = false;
-var addScore, cpu, d1, d2, d3, d4, d5, d6, zD1, zD2, zD3, zD4, zD5, zD6;
+var addScore, cpu;
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
