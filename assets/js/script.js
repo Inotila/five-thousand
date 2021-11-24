@@ -33,6 +33,8 @@ function startingOptions() {
     document.getElementById("stop-button").disabled = true;
     document.getElementById("keep-button").disabled = true;
     document.getElementById("roll-button").disabled = false;
+    document.getElementById("stop-button").addEventListener("mouseover", function( event ) {
+        event.target.style.backgroundColor = "#fff";});
 }
 
 clickCount();
@@ -48,6 +50,7 @@ function clickCount() {
     function rollNumberLimit() {
         if (rollCounter === 3) {
             document.getElementById("roll-button").disabled = true;
+            document.getElementById("roll-button").style.backgroundColor = '#ff8080';
         }
     }
 }
@@ -127,7 +130,9 @@ function keepDi() {
 
     if (keepClicked === true) {
         document.getElementById("keep-button").disabled = true;
+        document.getElementById("keep-button").style.backgroundColor = '#ff8080';
         document.getElementById("roll-button").disabled = true;
+        document.getElementById("roll-button").style.backgroundColor = '#ff8080';
         document.getElementById("stop-button").disabled = false;
 
     }
@@ -210,8 +215,12 @@ function endTurn() {
         playerRolled = true;
 
         if (playerRolled === true) {
-            document.getElementById("keep-button").disabled = true;
             document.getElementById("roll-button").disabled = false;
+            document.getElementById("roll-button").style.backgroundColor = '#fff';
+            document.getElementById("roll-button").addEventListener("mouseover", function( event ) {
+                event.target.style.backgroundColor = "#a0db16";});
+            document.getElementById("keep-button").disabled = true;
+            document.getElementById("keep-button").style.backgroundColor = '#fff';
             document.getElementById("stop-button").disabled = true;
         }
 
