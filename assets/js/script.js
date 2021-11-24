@@ -178,7 +178,7 @@ function endTurn() {
 
                     return {
                         zenElementId: zenElementId,
-                        imgSrc: `dice${ zenRandomNumber}.png`,
+                        imgSrc: `zendice${ zenRandomNumber}.png`,
                         index: index + 1,
                         number: zenRandomNumber
                     };
