@@ -59,7 +59,6 @@ function clickCount() {
 
 
 //sound effects
-play();
 function play() {
         audio.play();
 }
