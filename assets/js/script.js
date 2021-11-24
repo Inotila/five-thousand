@@ -7,6 +7,7 @@ var rollCounter = 1;
 var keepClicked = false;
 var playerRolled = false;
 var cpu;
+let audio = new Audio("./assets/sounds/dice-roll.wav");
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -33,8 +34,9 @@ function startingOptions() {
     document.getElementById("stop-button").disabled = true;
     document.getElementById("keep-button").disabled = true;
     document.getElementById("roll-button").disabled = false;
-    document.getElementById("stop-button").addEventListener("mouseover", function( event ) {
-        event.target.style.backgroundColor = "#fff";});
+    document.getElementById("stop-button").addEventListener("mouseover", function (event) {
+        event.target.style.backgroundColor = "#fff";
+    });
 }
 
 clickCount();
@@ -53,6 +55,13 @@ function clickCount() {
             document.getElementById("roll-button").style.backgroundColor = '#ff8080';
         }
     }
+}
+
+
+//sound effects
+play();
+function play() {
+        audio.play();
 }
 
 function rollDi() {
@@ -76,11 +85,19 @@ function rollDi() {
     dices.map((dice, _index) => {
         let diceWithOnes = dices.filter((item, index) => item.number === 1);
         let diceWithFives = dices.filter((item, index) => item.number === 5);
+        let diceWithoutOnes = dices.filter((item, index) => item.number !== 1);
+        let diceWithoutFives = dices.filter((item, index) => item.number !== 5);
 
         if (diceWithOnes.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 1000;
         } else if (diceWithFives.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 500;
+        } else if (diceWithoutOnes.length === 6 && _index === 0 && diceWithoutFives.length === 6 && _index === 0) {
+            currentPoints = currentPoints + 0;
+            console.log("you suck!");
+            document.getElementById("roll-button").disabled = true;
+            document.getElementById("roll-button").style.backgroundColor = '#ff8080';
+            document.getElementById("stop-button").disabled = false;
         }
 
         if (dice.number === 1 && diceWithOnes.length < 3) {
@@ -90,6 +107,7 @@ function rollDi() {
         } else {
             currentPoints = currentPoints + 0;
         }
+
     });
 
     console.log("player's current score:" + currentPoints);
@@ -217,8 +235,9 @@ function endTurn() {
         if (playerRolled === true) {
             document.getElementById("roll-button").disabled = false;
             document.getElementById("roll-button").style.backgroundColor = '#fff';
-            document.getElementById("roll-button").addEventListener("mouseover", function( event ) {
-                event.target.style.backgroundColor = "#a0db16";});
+            document.getElementById("roll-button").addEventListener("mouseover", function (event) {
+                event.target.style.backgroundColor = "#a0db16";
+            });
             document.getElementById("keep-button").disabled = true;
             document.getElementById("keep-button").style.backgroundColor = '#fff';
             document.getElementById("stop-button").disabled = true;
@@ -228,7 +247,7 @@ function endTurn() {
 }
 
 function winner() {
-    if (playerScore <=5000) {
+    if (playerScore <= 5000) {
         console.log("Player wins");
         playerScore = 0;
         ZenScore = 0;
