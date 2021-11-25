@@ -170,8 +170,25 @@ hr {
     background-color: rgba(255,255,255, 0.5);
     width: 70%;
     border-radius:20px;
+    position: fixed;
+    z-index: 1;
+    right: 200px;
+    top: 300px;
 }
 
+#popup-img {
+    float: left;
+}
+
+#popup-text{
+    padding-left: 10px;
+}
+
+#popup-button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*rules page */
 
