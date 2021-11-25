@@ -166,6 +166,13 @@ hr {
     background-color: #fff;
 }
 
+#winner-pop-up {
+    background-color: rgba(255,255,255, 0.5);
+    width: 70%;
+    border-radius:20px;
+}
+
+
 /*rules page */
 
 
