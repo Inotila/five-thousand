@@ -198,6 +198,16 @@ a {
     margin-left: auto;
     margin-right: auto;
 }
+/*about page */
+#about-text{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#about-text >p {
+    text-align:center;
+}
 
 
 /*social media links */
