@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 startingOptions();
-winner();
 
 function startingOptions() {
     document.getElementById("stop-button").disabled = true;
@@ -152,6 +151,19 @@ function keepDi() {
         document.getElementById("stop-button").disabled = false;
 
     }
+
+    //get winner
+    if (playerScore >= 300) {
+        console.log("Player wins");
+        document.getElementById("winner-pop-up").style.visibility = 'visible';
+        document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master. If you would like try again select play, or select home to return home.'; 
+        document.getElementById("keep-button").disabled = true;
+        document.getElementById("keep-button").style.backgroundColor = '#ff8080';
+        document.getElementById("roll-button").disabled = true;
+        document.getElementById("roll-button").style.backgroundColor = '#ff8080';
+        document.getElementById("stop-button").disabled = true;
+        document.getElementById("stop-button").style.backgroundColor = '#ff8080';
+    }
 }
 
 
@@ -200,7 +212,7 @@ function endTurn() {
                     zenRandomNumber = 0;
                     console.log("end zen turn!")
                 }
-        
+
 
                 if (dice.number === 1 && zenDiceWithOnes.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 100;
@@ -255,18 +267,17 @@ function endTurn() {
         }
 
     }
-}
 
-function winner() {
-    if (playerScore <= 5000) {
-        console.log("Player wins");
-        playerScore = 0;
-        ZenScore = 0;
-    } else if (cpuScore <= 5000) {
+    //get winner
+    if (cpuScore >= 300) {
         console.log("Mazer Zen wins");
-    } else {
-        console.log("still waiting for a winner");
-        playerScore = 0;
-        ZenScore = 0;
+        document.getElementById("winner-pop-up").style.visibility = 'visible';
+        document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well. If you would like try again select play, or select home to return home.'; 
+        document.getElementById("keep-button").disabled = true;
+        document.getElementById("keep-button").style.backgroundColor = '#ff8080';
+        document.getElementById("roll-button").disabled = true;
+        document.getElementById("roll-button").style.backgroundColor = '#ff8080';
+        document.getElementById("stop-button").disabled = true;
+        document.getElementById("stop-button").style.backgroundColor = '#ff8080';
     }
 }
