@@ -166,6 +166,8 @@ hr {
     background-color: #fff;
 }
 
+/*winner popup*/
+
 #winner-pop-up {
     visibility: hidden;
     background-color: rgba(255,255,255, 0.8);
@@ -378,6 +380,36 @@ hr {
     margin: 10px;
     border-radius: 20px;
 }
+
+#winner-pop-up {
+    width: 100%;
+    position: fixed;
+    right: 0px;
+    top: 100px;
+}
+
+#popup-img {
+    float: none;
+    position:relative;
+    top:10px;
+    left:50px;
+}
+
+#popup-text{
+    padding-left: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.winner-buttons {
+    font-size: 130%;
+    height: 50px;
+    margin: 10px;
+    position:relative;
+    left:50px;
+    border-radius: 20px;
+}
+
 }
 
 /* media for tablets*/
@@ -404,4 +436,11 @@ hr {
     width: 80%;
     border-radius:20px;
     }
+
+    #winner-pop-up {
+    width: 100%;
+    position: fixed;
+    right: 0px;
+    top: 100px;
+}
 }
