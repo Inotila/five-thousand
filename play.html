@@ -13,12 +13,12 @@
 
 <body>
     <header>
-        <a href="index.html"><img id="game-logo" src="./assets/images/game-logo.png" alt="logo"></a> 
+        <a href="index.html"><img id="game-logo" src="./assets/images/game-logo.png" alt="logo"></a>
     </header>
     <div id="score-keeper">
-        <p class="score" id="player-score-media"> Player Score: <span id="player-score">0</span>
-        </p>
-        <p class="score" id="cpu-score-media" > Master Score: <span id="cpu-score">0</span>
+        <p class="total-score" id="player-score-media"> Player Score: <span id="player-score">0</span>
+            <hr>
+            Master Score: <span id="cpu-score">0</span></p>
     </div>
     </p>
     <div id="play-zone">
@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class="control-buttons">
-        <button data-type="keep" class="play-buttons"   id="keep-button">KEEP DICE</button>
+        <button data-type="keep" class="play-buttons" id="keep-button">KEEP DICE</button>
         <button data-type="play" class="play-buttons" onclick="clickCount(); play()" id="roll-button">ROLL DICE</button>
         <button data-type="stop" class="play-buttons" id="stop-button">PASS DICE</button>
     </div>
