@@ -4,9 +4,9 @@ To run a frontend (HTML, CSS, JavaScript only) application in Gitpod, in the ter
 
 python3 -m http.server
 
-To run the webpage click on this link: <a href="https://inotila.github.io/AlchemistTours--MileStone1-/index.html ">Alchemist Tours</a>
+To run the webpage click on this link: <a href="">Five thousand</a>
 
-<img src="./assets/images/responsive.jpg" width="700">
+<img src="" width="700">
 
 # Five Thousand (Portfolio 2)
 
