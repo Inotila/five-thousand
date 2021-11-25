@@ -156,7 +156,11 @@ a {
 
 /*rules page */
 
+
 #rules-page {
+    width:70%;
+    min-height:350px;
+    background-image: url('../images/back-drop.jpg');
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -164,10 +168,13 @@ a {
 
 #master-rules-img {
     float: left;
+    position:relative;
+    top: 10px;
 }
 
 #rules-text {
     text-align: center;
+    position:relative;;
 }
 
 /*social media links */
