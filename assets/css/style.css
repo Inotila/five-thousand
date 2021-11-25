@@ -192,6 +192,12 @@ a {
 
 }
 
+#rule-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 /*social media links */
 
