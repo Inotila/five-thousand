@@ -239,7 +239,7 @@ hr {
 }
 
 /*medium screen for mobiles and tabs 950px wide and down */
-@media screen and (max-width: 949px) {
+@media screen and (max-width: 425px) {
 /*home page */
 #game-logo {
     display: block;
@@ -340,4 +340,30 @@ hr {
     margin: 10px;
     border-radius: 20px;
 }
+}
+
+/* media for tablets*/
+@media screen and (max-width: 768px) {
+    #play-zone {
+    width: 80%;
+    min-height: 345px;
+    border-radius:10px;
+}
+
+#home-zone {
+    width: 80%;
+}
+
+#welcome-text {
+    border-radius: 10px
+}
+
+#rules-page {
+    width:80%;
+}
+
+#rules-text {
+    width: 80%;
+    border-radius:20px;
+    }
 }
