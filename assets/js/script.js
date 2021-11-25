@@ -153,7 +153,7 @@ function keepDi() {
     }
 
     //get winner
-    if (playerScore >= 300) {
+    if (playerScore >=  5000) {
         console.log("Player wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
         document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master. If you would like try again select play, or select home to return home.'; 
@@ -269,7 +269,7 @@ function endTurn() {
     }
 
     //get winner
-    if (cpuScore >= 300) {
+    if (cpuScore >= 5000) {
         console.log("Mazer Zen wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
         document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well. If you would like try again select play, or select home to return home.'; 
