@@ -226,3 +226,46 @@ a {
     padding: 2%;
     color: #000;
 }
+
+/*medium screen for mobiles and tabs 950px wide and down */
+@media screen and (max-width: 949px) {
+
+#game-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+}
+
+
+#home-zone {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url('../images/back-drop.jpg');
+    border-radius:10px;
+}
+
+#hero-img {
+   width:50%;
+   
+}
+
+#master-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position:relative;
+    right: 25px
+}
+
+.nav-buttons {
+    font-size: 80%;
+    width: 70px;
+    height: 50px;
+    margin: 10px;
+    border-radius: 20px;
+    border: 3px solid #000;
+}
+}
