@@ -42,6 +42,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     background-image: url('../images/back-drop.jpg');
+    border-radius:10px;
 }
 
 #hero-img {
@@ -112,6 +113,7 @@ a {
     min-height: 342.156px;
     background-color: #eff14e;
     background-image: url('../images/back-drop.jpg');
+    border-radius:10px;
 }
 
 #play-zone > img {
@@ -163,7 +165,8 @@ a {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+    background-image: url('../images/back-drop-big.jpg');
+     border-radius:10px;
 
 }
 
@@ -174,16 +177,19 @@ a {
 }
 
 #rules-text {
-    width: 60%;
+    width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgba(255,255,255, 0.5);
+    border-radius:50px;
     }
 
 #rules-text > p{
     text-align:center;
     margin-left: 10px;
     margin-right:10px;
+
 }
 
 
