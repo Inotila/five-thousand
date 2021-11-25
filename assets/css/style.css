@@ -168,7 +168,7 @@ hr {
 
 #winner-pop-up {
     visibility: hidden;
-    background-color: rgba(255,255,255, 0.7);
+    background-color: rgba(255,255,255, 0.8);
     width: 70%;
     border-radius:20px;
     position: fixed;
@@ -184,12 +184,7 @@ hr {
 #popup-text{
     padding-left: 10px;
     text-align: center;
-}
-
-#popup-button{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    font-weight: bold;
 }
 
 .winner-buttons {
@@ -200,6 +195,8 @@ hr {
     border-radius: 30px;
     border: 3px solid #000;
     background-color: #fff;
+    position:relative;
+    left:100px;
 }
 
 
