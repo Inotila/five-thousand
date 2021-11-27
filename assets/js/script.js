@@ -181,11 +181,12 @@ function keepDi() {
     function zenTurnIndicator() {
         if (keepClicked === true && gameHasBegun === true) {
             document.getElementById("turn-indicator").style.visibility = 'visible';
-            document.getElementById("turn-text").innerHTML = " IT'S ZEN'S ROLL!";
+            document.getElementById("turn-text").innerHTML = "..LET ME HAVE A GO..";
+            document.getElementById("turn-indicator").style.color = '#1906b4';
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 700);
+            }, 1200);
         }
     }
 
@@ -319,11 +320,12 @@ function endTurn() {
     function turnIndicator() {
         if (playerRolled === true && gameHasBegun === true) {
             document.getElementById("turn-indicator").style.visibility = 'visible';
-            document.getElementById("turn-text").innerHTML = " IT'S YOUR ROLL!";
+            document.getElementById("turn-indicator").style.color = '#1906b4';
+            document.getElementById("turn-text").innerHTML = "...IT'S YOUR TURN...";
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 700);
+            }, 1200);
         }
     }
 

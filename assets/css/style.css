@@ -215,8 +215,7 @@ hr {
     left:0px;
     margin-left: auto;
     margin-right: auto;
-    top: 300px;
-    color:#0d7a1b
+    top: 250px;
 }
 
 #static-div {
@@ -228,6 +227,14 @@ hr {
     margin-left: auto;
     margin-right: auto;
 }
+
+
+#turn-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 #turn-text {
     font-size: 200%;
@@ -439,6 +446,10 @@ hr {
     position:relative;
     left:50px;
     border-radius: 20px;
+}
+
+#static-div {
+    width:90%;
 }
 
 }
