@@ -89,22 +89,31 @@ function rollDi() {
 
         if (diceWithOnes.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 1000;
+            document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
         } else if (diceWithFives.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 500;
+            document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
         } else if (diceWithoutOnes.length === 6 && _index === 0 && diceWithoutFives.length === 6 && _index === 0) {
             currentPoints = currentPoints + 0;
             console.log("you suck!");
             document.getElementById("roll-button").disabled = true;
             document.getElementById("roll-button").style.backgroundColor = '#ff8080';
             document.getElementById("stop-button").disabled = false;
+            document.getElementById("points-indicator").style.backgroundColor = "#ff8080"
         }
 
         if (dice.number === 1 && diceWithOnes.length < 3) {
             currentPoints = currentPoints + 100;
+            document.getElementById("points-indicator").style.backgroundColor = "#fff";
         } else if (dice.number === 5 && diceWithFives.length < 3) {
             currentPoints = currentPoints + 50;
+            document.getElementById("points-indicator").style.backgroundColor = "#fff";
         } else {
             currentPoints = currentPoints + 0;
+            if (currentPoints === 0) {
+                document.getElementById("points-indicator").style.backgroundColor = "#ff8080";
+            }
+
         }
     });
 
@@ -176,7 +185,7 @@ function keepDi() {
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 2000);
+            }, 700);
         }
     }
 
@@ -221,21 +230,29 @@ function endTurn() {
 
                 if (zenDiceWithOnes.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 1000;
+                    document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
                 } else if (zenDiceWithFives.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 500;
+                    document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
                 } else if (zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 0;
                     zenRandomNumber = 0;
                     console.log("end zen turn!")
+                    document.getElementById("points-indicator").style.backgroundColor = "#ff8080";
                 }
 
 
                 if (dice.number === 1 && zenDiceWithOnes.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 100;
+                    document.getElementById("points-indicator").style.backgroundColor = "#fff"
                 } else if (dice.number === 5 && zenDiceWithFives.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 50;
+                    document.getElementById("points-indicator").style.backgroundColor = "#fff"
                 } else {
                     zenCurrentPoints = zenCurrentPoints + 0;
+                    if (zenCurrentPoints === 0) {
+                        document.getElementById("points-indicator").style.backgroundColor = "#ff8080";
+                    }
                 }
             });
 
@@ -306,7 +323,7 @@ function endTurn() {
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 2000);
+            }, 700);
         }
     }
 
