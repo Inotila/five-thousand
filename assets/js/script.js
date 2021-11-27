@@ -6,7 +6,7 @@ var zenCurrentPoints = 0;
 var rollCounter = 1;
 var keepClicked = false;
 var playerRolled = false;
-var cpu;
+var cpuRolled = false;
 let audio = new Audio("./assets/sounds/dice-roll.wav");
 
 //wait for the dom to finish loading
