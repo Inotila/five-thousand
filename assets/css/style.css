@@ -207,7 +207,7 @@ hr {
 }
 
 #turn-indicator {
-    visibility: visible;
+    visibility: hidden;
     width: 100%;
     border-radius:20px;
     position: fixed;
