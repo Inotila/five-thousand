@@ -279,7 +279,7 @@ hr {
 }
 
 /*medium screen for mobiles and tabs 950px wide and down */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 835px) {
 /*home page */
 #game-logo {
     display: block;
