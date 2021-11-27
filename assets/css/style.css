@@ -41,7 +41,7 @@ hr {
 }
 
 #home-zone {
-    width: 50%;
+    width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -418,29 +418,5 @@ hr {
     width: 80%;
     min-height: 345px;
     border-radius:10px;
-}
-
-#home-zone {
-    width: 80%;
-}
-
-#welcome-text {
-    border-radius: 10px
-}
-
-#rules-page {
-    width:80%;
-}
-
-#rules-text {
-    width: 80%;
-    border-radius:20px;
-    }
-
-    #winner-pop-up {
-    width: 100%;
-    position: fixed;
-    right: 0px;
-    top: 100px;
 }
 }
