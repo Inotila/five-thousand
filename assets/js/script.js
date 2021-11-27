@@ -8,6 +8,7 @@ var keepClicked = false;
 var playerRolled = false;
 var cpuRolled = false;
 let audio = new Audio("./assets/sounds/dice-roll.wav");
+let gameHasBegun = false;
 
 //wait for the dom to finish loading
 document.addEventListener('DOMContentLoaded', function () {
@@ -123,6 +124,7 @@ function rollDi() {
         ).src = `./assets/images/${item.imgSrc}`);
     });
 
+    gameHasBegun = true;
     playerRolled = true;
     if (playerRolled === true) {
         document.getElementById("keep-button").disabled = false;
@@ -153,10 +155,10 @@ function keepDi() {
     }
 
     //get winner
-    if (playerScore >=  5000) {
+    if (playerScore >= 5000) {
         console.log("Player wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
-        document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master. If you would like try again select play, or select home to return home.'; 
+        document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master. If you would like try again select play, or select home to return home.';
         document.getElementById("keep-button").disabled = true;
         document.getElementById("keep-button").style.backgroundColor = '#ff8080';
         document.getElementById("roll-button").disabled = true;
@@ -164,6 +166,20 @@ function keepDi() {
         document.getElementById("stop-button").disabled = true;
         document.getElementById("stop-button").style.backgroundColor = '#ff8080';
     }
+
+    zenTurnIndicator();
+
+    function zenTurnIndicator() {
+        if (keepClicked === true && gameHasBegun === true) {
+            document.getElementById("turn-indicator").style.visibility = 'visible';
+            document.getElementById("turn-text").innerHTML = " IT'S ZEN'S ROLL!";
+
+            setTimeout(function closeTurnIndicator() {
+                document.getElementById("turn-indicator").style.visibility = 'hidden'
+            }, 2000);
+        }
+    }
+
 }
 
 
@@ -272,7 +288,7 @@ function endTurn() {
     if (cpuScore >= 5000) {
         console.log("Mazer Zen wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
-        document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well. If you would like try again select play, or select home to return home.'; 
+        document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well. If you would like try again select play, or select home to return home.';
         document.getElementById("keep-button").disabled = true;
         document.getElementById("keep-button").style.backgroundColor = '#ff8080';
         document.getElementById("roll-button").disabled = true;
@@ -280,4 +296,19 @@ function endTurn() {
         document.getElementById("stop-button").disabled = true;
         document.getElementById("stop-button").style.backgroundColor = '#ff8080';
     }
+
+    turnIndicator();
+
+    function turnIndicator() {
+        if (playerRolled === true && gameHasBegun === true) {
+            document.getElementById("turn-indicator").style.visibility = 'visible';
+            document.getElementById("turn-text").innerHTML = " IT'S YOUR ROLL!";
+
+            setTimeout(function closeTurnIndicator() {
+                document.getElementById("turn-indicator").style.visibility = 'hidden'
+            }, 2000);
+        }
+    }
+
+
 }

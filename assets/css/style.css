@@ -206,6 +206,27 @@ hr {
     background-color: #a0db16;
 }
 
+#turn-indicator {
+    visibility: hidden;
+    background-color: rgba(255,255,255, 0.8);
+    width: 100%;
+    border-radius:20px;
+    position: fixed;
+    z-index: 1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 300px;
+}
+
+#turn-text {
+    font-size: 200%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*rules page */
 
 
