@@ -189,7 +189,7 @@ function keepDi() {
             }, 1200);
 
             function masterTurnSpeach(){
-                var randomSpeach = ["IT IS YOUR TURN!", "YOUR THROW", "YOU!", "YOU ARE UP", "THE DICE IS YOURS","TRY YOUR LUCK"];
+                var randomSpeach = ["IT IS MY TURN!", "LET THE MASTER PLAY", "MY GO!", "PASS THE DICE", "WATCH AND LEARN","MY THROW","I'M READY!"];
             
                 var randomSpeachIndex = Math.floor(Math.random() * randomSpeach.length);
             
@@ -339,7 +339,7 @@ function endTurn() {
             }, 1200);
 
             function TurnSpeach(){
-                var randomSpeach = ["IT IS MY TURN!", "LET THE MASTER PLAY", "MY GO!", "PASS THE DICE", "WATCH AND LEARN","MY THROW","I'M READY!"];
+                var randomSpeach = ["IT IS YOUR TURN!", "YOUR THROW", "YOU!", "YOU ARE UP", "THE DICE IS YOURS","TRY YOUR LUCK","BEST OF LUCK"];
             
                 var speachIndex = Math.floor(Math.random() * randomSpeach.length);
             
