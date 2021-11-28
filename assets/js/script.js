@@ -154,6 +154,15 @@ function keepDi() {
     rollCounter = 1;
     playerScore = playerScore + currentPoints;
 
+    setTimeout(function styleScoreInc() {
+        document.getElementById("player-score").style.fontWeight = 'bolder';
+    },500);
+
+    setTimeout(function unsetStyleScoreInc() {
+        document.getElementById("player-score").style.fontWeight = '400';
+    },1500);
+
+
     newScore();
     //updates the players total score after every turn
     function newScore() {
@@ -177,7 +186,7 @@ function keepDi() {
         gameHasBegun = false;
         console.log("Player wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
-        document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master. If you would like try again select play, or select home to return home.';
+        document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master.Would you like to play again?';
         document.getElementById("keep-button").disabled = true;
         document.getElementById("keep-button").style.backgroundColor = '#ff8080';
         document.getElementById("roll-button").disabled = true;
@@ -213,7 +222,7 @@ function keepDi() {
     }
 }
 
-
+//main function for the porgrams turns to roll
 function endTurn() {
     playerRolled = false;
 
@@ -226,6 +235,7 @@ function endTurn() {
         i++;
     }
 
+    //how the the computer generates a random number
     function masterTurn() {
         if (playerRolled === false) {
             zenCurrentPoints = 0;
@@ -243,19 +253,24 @@ function endTurn() {
                     };
                 });
 
-            //calculating the points
+            //filtering the values of the array
             zenDices.map((dice, _index) => {
                 let zenDiceWithOnes = zenDices.filter((item, index) => item.number === 1);
                 let zenDiceWithFives = zenDices.filter((item, index) => item.number === 5);
                 let zenDiceWithoutOnes = zenDices.filter((item, index) => item.number !== 1);
                 let zenDiceWithoutFives = zenDices.filter((item, index) => item.number !== 5);
 
+                //calculating the points from taking the filtered values and giving them a point value
                 if (zenDiceWithOnes.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 1000;
-                    document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+                    if (zenCurrentPoints >= 1000) {
+                        document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+                    }
                 } else if (zenDiceWithFives.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 500;
-                    document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+                    if (zenCurrentPoints >= 500) {
+                        document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+                    }
                 } else if (zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 0;
                     zenRandomNumber = 0;
@@ -278,29 +293,33 @@ function endTurn() {
                 }
             });
 
-
-            console.log("this is the Zens current score:" + zenCurrentPoints);
-
+            //displaying the current points of the cpus turn
             function zenPoints() {
                 let ZenScore = parseInt(document.getElementById("current-score").innerHTML);
                 document.getElementById("current-score").innerHTML = zenCurrentPoints;
                 return ZenScore;
             }
-
             zenPoints();
 
             cpuScore = cpuScore + zenCurrentPoints;
-            console.log("this is the zen score:" + cpuScore);
+            setTimeout(function zenStyleScoreInc() {
+                document.getElementById("cpu-score").style.fontWeight = 'bolder';
+            },500);
+        
+            setTimeout(function zenUnsetStyleScoreInc() {
+                document.getElementById("cpu-score").style.fontWeight = '400';
+            },1500);
+        
 
             newZenScore();
-
+            //displaying and updating the total points of the cpu
             function newZenScore() {
                 let updateZenScore = parseInt(document.getElementById("cpu-score").innerHTML);
                 document.getElementById("cpu-score").innerHTML = cpuScore;
                 return updateZenScore;
             }
 
-            //display the result
+            //display the images of the dice that are the result of the roll
             zenDices.map((item, index) => {
                 return (document.getElementById(
                     item.zenElementId
@@ -310,6 +329,7 @@ function endTurn() {
         rollCounter = 0;
         playerRolled = true;
 
+        //locking the pass the dice button and unlocking the others to guide the user into the next step and avoid pressing the wrong button
         if (playerRolled === true) {
             document.getElementById("roll-button").disabled = false;
             document.getElementById("roll-button").style.backgroundColor = '#fff';
@@ -320,15 +340,14 @@ function endTurn() {
             document.getElementById("keep-button").style.backgroundColor = '#fff';
             document.getElementById("stop-button").disabled = true;
         }
-
     }
 
-    //get winner
+    //determining if the computer won and displaying a message
     if (cpuScore >= 5000) {
         gameHasBegun = false;
         console.log("Mazer Zen wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
-        document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well. If you would like try again select play, or select home to return home.';
+        document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well! Would you like to play again?';
         document.getElementById("keep-button").disabled = true;
         document.getElementById("keep-button").style.backgroundColor = '#ff8080';
         document.getElementById("roll-button").disabled = true;
@@ -338,7 +357,7 @@ function endTurn() {
     }
 
     turnIndicator();
-
+//a pop up message to indicate who's turn it is
     function turnIndicator() {
         if (playerRolled === true && gameHasBegun === true) {
             setTimeout(function endOfMasterRoll() {
@@ -352,11 +371,8 @@ function endTurn() {
 
             function TurnSpeach() {
                 var randomSpeach = ["IT IS YOUR TURN!", "YOUR THROW", "YOU!", "YOU ARE UP", "THE DICE IS YOURS", "TRY YOUR LUCK", "BEST OF LUCK"];
-
                 var speachIndex = Math.floor(Math.random() * randomSpeach.length);
-
                 var speachTwo = randomSpeach[speachIndex];
-
                 return speachTwo;
             }
         }
