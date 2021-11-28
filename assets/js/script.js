@@ -188,11 +188,11 @@ function keepDi() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
             }, 1200);
 
-            function masterTurnSpeach(){
-                var randomSpeach = ["IT IS MY TURN!", "LET THE MASTER PLAY", "MY GO!", "PASS THE DICE", "WATCH AND LEARN","MY THROW","I'M READY!"];
-            
+            function masterTurnSpeach() {
+                var randomSpeach = ["IT IS MY TURN!", "LET THE MASTER PLAY", "MY GO!", "PASS THE DICE", "WATCH AND LEARN", "MY THROW", "I'M READY!"];
+
                 var randomSpeachIndex = Math.floor(Math.random() * randomSpeach.length);
-            
+
                 var speach = randomSpeach[randomSpeachIndex];
 
                 return speach;
@@ -331,18 +331,20 @@ function endTurn() {
 
     function turnIndicator() {
         if (playerRolled === true && gameHasBegun === true) {
-            document.getElementById("turn-indicator").style.visibility = 'visible';
+            setTimeout(function endOfMasterRoll() {
+                document.getElementById("turn-indicator").style.visibility = 'visible'
+            }, 1200);
             document.getElementById("turn-text").innerHTML = TurnSpeach();
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 1200);
+            }, 2400);
 
-            function TurnSpeach(){
-                var randomSpeach = ["IT IS YOUR TURN!", "YOUR THROW", "YOU!", "YOU ARE UP", "THE DICE IS YOURS","TRY YOUR LUCK","BEST OF LUCK"];
-            
+            function TurnSpeach() {
+                var randomSpeach = ["IT IS YOUR TURN!", "YOUR THROW", "YOU!", "YOU ARE UP", "THE DICE IS YOURS", "TRY YOUR LUCK", "BEST OF LUCK"];
+
                 var speachIndex = Math.floor(Math.random() * randomSpeach.length);
-            
+
                 var speachTwo = randomSpeach[speachIndex];
 
                 return speachTwo;
