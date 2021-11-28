@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 })
 
+//Disabling buttons that only will only be used once the user has started playing so they know what to press
 startingOptions();
 
 function startingOptions() {
@@ -39,6 +40,7 @@ function startingOptions() {
     });
 }
 
+//counting the number of clicks to limit the number of turns a user gets
 clickCount();
 
 function clickCount() {
@@ -47,6 +49,7 @@ function clickCount() {
     }
     console.log("player rolled" + rollCounter + "times");
 
+    //limting the number of times the user can play to 3 rolls
     rollNumberLimit();
 
     function rollNumberLimit() {
@@ -58,13 +61,13 @@ function clickCount() {
 }
 
 
-//sound effects
+//sound effects for the dice
 function play() {
     audio.play();
 }
 
+//main function for user, this is how the dice is rolled
 function rollDi() {
-    //roll the dice
     currentPoints = 0;
 
     let dices = ["one", "two", "three", "four", "five", "six"].map(
@@ -80,22 +83,26 @@ function rollDi() {
             };
         });
 
-    //calculating the points
+    //calculating the points by filtering out the relavant numbers from the array
     dices.map((dice, _index) => {
         let diceWithOnes = dices.filter((item, index) => item.number === 1);
         let diceWithFives = dices.filter((item, index) => item.number === 5);
         let diceWithoutOnes = dices.filter((item, index) => item.number !== 1);
         let diceWithoutFives = dices.filter((item, index) => item.number !== 5);
 
+        //calcultating how the point values of each number
         if (diceWithOnes.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 1000;
-            document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+            if (currentPoints >= 1000) {
+                document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+            }
         } else if (diceWithFives.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 500;
-            document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+            if (currentPoints >= 500) {
+                document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+            }
         } else if (diceWithoutOnes.length === 6 && _index === 0 && diceWithoutFives.length === 6 && _index === 0) {
             currentPoints = currentPoints + 0;
-            console.log("you suck!");
             document.getElementById("roll-button").disabled = true;
             document.getElementById("roll-button").style.backgroundColor = '#ff8080';
             document.getElementById("stop-button").disabled = false;
@@ -117,8 +124,7 @@ function rollDi() {
         }
     });
 
-    console.log("player's current score:" + currentPoints);
-
+    //adisplaying the score of the roll in current points
     function currentScore() {
         let score = parseInt(document.getElementById("current-score").innerHTML);
         document.getElementById("current-score").innerHTML = currentPoints;
@@ -126,7 +132,7 @@ function rollDi() {
     }
     currentScore();
 
-    //display the result
+    //display the images of the dice that was rolled
     dices.map((item, index) => {
         return (document.getElementById(
             item.elementId
@@ -135,25 +141,28 @@ function rollDi() {
 
     gameHasBegun = true;
     playerRolled = true;
+
+    //enabling the keep button after the first roll
     if (playerRolled === true) {
         document.getElementById("keep-button").disabled = false;
     }
 }
 
+//this adds the currents points that the users wants to keep on to their total score
 function keepDi() {
     keepClicked = true;
     rollCounter = 1;
     playerScore = playerScore + currentPoints;
-    console.log("player's score:" + playerScore);
 
     newScore();
-
+    //updates the players total score after every turn
     function newScore() {
         let updateScore = parseInt(document.getElementById("player-score").innerHTML);
         document.getElementById("player-score").innerHTML = playerScore;
         return updateScore;
     }
 
+    //locking the buttons the player uses to play to end their turn, and help them know to let the PC play
     if (keepClicked === true) {
         document.getElementById("keep-button").disabled = true;
         document.getElementById("keep-button").style.backgroundColor = '#ff8080';
@@ -163,7 +172,7 @@ function keepDi() {
 
     }
 
-    //get winner
+    //this determines if the player won and pops up a message to alert them
     if (playerScore >= 5000) {
         gameHasBegun = false;
         console.log("Player wins");
@@ -178,23 +187,24 @@ function keepDi() {
     }
 
     zenTurnIndicator();
-
+    //a function that triggers a popup to show that their turn has ended
     function zenTurnIndicator() {
         if (keepClicked === true && gameHasBegun === true) {
-            document.getElementById("turn-indicator").style.visibility = 'visible';
-            document.getElementById("turn-text").innerHTML = masterTurnSpeach();
+            setTimeout(function endTurnIndicatordelay() {
+                document.getElementById("turn-indicator").style.visibility = 'visible';
+                document.getElementById("turn-text").innerHTML = masterTurnSpeach();
+            }, 1200);
+
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 1200);
+            }, 2400);
 
+            //generates random speach for the message in the turn indicator
             function masterTurnSpeach() {
                 var randomSpeach = ["IT IS MY TURN!", "LET THE MASTER PLAY", "MY GO!", "PASS THE DICE", "WATCH AND LEARN", "MY THROW", "I'M READY!"];
-
                 var randomSpeachIndex = Math.floor(Math.random() * randomSpeach.length);
-
                 var speach = randomSpeach[randomSpeachIndex];
-
                 return speach;
             }
 
