@@ -165,6 +165,7 @@ function keepDi() {
 
     //get winner
     if (playerScore >= 5000) {
+        gameHasBegun = false;
         console.log("Player wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
         document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master. If you would like try again select play, or select home to return home.';
@@ -181,15 +182,25 @@ function keepDi() {
     function zenTurnIndicator() {
         if (keepClicked === true && gameHasBegun === true) {
             document.getElementById("turn-indicator").style.visibility = 'visible';
-            document.getElementById("turn-text").innerHTML = "..LET ME HAVE A GO..";
-            document.getElementById("turn-indicator").style.color = '#1906b4';
+            document.getElementById("turn-text").innerHTML = masterTurnSpeach();
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
             }, 1200);
+
+            function masterTurnSpeach(){
+                var randomSpeach = ["IT IS YOUR TURN!", "YOUR THROW", "YOU!", "YOU ARE UP", "THE DICE IS YOURS","TRY YOUR LUCK"];
+            
+                var randomSpeachIndex = Math.floor(Math.random() * randomSpeach.length);
+            
+                var speach = randomSpeach[randomSpeachIndex];
+
+                return speach;
+            }
+
+
         }
     }
-
 }
 
 
@@ -304,6 +315,7 @@ function endTurn() {
 
     //get winner
     if (cpuScore >= 5000) {
+        gameHasBegun = false;
         console.log("Mazer Zen wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
         document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well. If you would like try again select play, or select home to return home.';
@@ -320,12 +332,21 @@ function endTurn() {
     function turnIndicator() {
         if (playerRolled === true && gameHasBegun === true) {
             document.getElementById("turn-indicator").style.visibility = 'visible';
-            document.getElementById("turn-indicator").style.color = '#1906b4';
-            document.getElementById("turn-text").innerHTML = "...IT'S YOUR TURN...";
+            document.getElementById("turn-text").innerHTML = TurnSpeach();
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
             }, 1200);
+
+            function TurnSpeach(){
+                var randomSpeach = ["IT IS MY TURN!", "LET THE MASTER PLAY", "MY GO!", "PASS THE DICE", "WATCH AND LEARN","MY THROW","I'M READY!"];
+            
+                var speachIndex = Math.floor(Math.random() * randomSpeach.length);
+            
+                var speachTwo = randomSpeach[speachIndex];
+
+                return speachTwo;
+            }
         }
     }
 
