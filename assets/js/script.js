@@ -21,8 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 keepDi();
             } else if (this.getAttribute("data-type") === "stop") {
                 endTurn();
-            } else {
-                console.log("waiting for user to play");
             }
         });
     }
@@ -30,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Disabling buttons that only will only be used once the user has started playing so they know what to press
 startingOptions();
-
 function startingOptions() {
     document.getElementById("stop-button").disabled = true;
     document.getElementById("keep-button").disabled = true;
@@ -42,16 +39,13 @@ function startingOptions() {
 
 //counting the number of clicks to limit the number of turns a user gets
 clickCount();
-
 function clickCount() {
     if (playerRolled === true) {
         rollCounter = rollCounter + 1;
     }
-    console.log("player rolled" + rollCounter + "times");
 
     //limting the number of times the user can play to 3 rolls
     rollNumberLimit();
-
     function rollNumberLimit() {
         if (rollCounter === 3) {
             document.getElementById("roll-button").disabled = true;
@@ -59,7 +53,6 @@ function clickCount() {
         }
     }
 }
-
 
 //sound effects for the dice
 function play() {
@@ -113,7 +106,6 @@ function rollDi() {
                 document.getElementById("turn-text").innerHTML = zeroRollIndicator();
             }, 500);
 
-
             setTimeout(function zeroRollIndicator(){
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
             }, 1500);
@@ -142,7 +134,7 @@ function rollDi() {
         }
     });
 
-    //adisplaying the score of the roll in current points
+    //displaying the score of the roll in current points
     function currentScore() {
         let score = parseInt(document.getElementById("current-score").innerHTML);
         document.getElementById("current-score").innerHTML = currentPoints;
@@ -180,7 +172,6 @@ function keepDi() {
         document.getElementById("player-score").style.fontWeight = '400';
     },1500);
 
-
     newScore();
     //updates the players total score after every turn
     function newScore() {
@@ -196,13 +187,11 @@ function keepDi() {
         document.getElementById("roll-button").disabled = true;
         document.getElementById("roll-button").style.backgroundColor = '#ff8080';
         document.getElementById("stop-button").disabled = false;
-
     }
 
     //this determines if the player won and pops up a message to alert them
     if (playerScore >= 5000) {
         gameHasBegun = false;
-        console.log("Player wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
         document.getElementById("winner-text").innerHTML = 'You have won,well done! The student becomes the master.Would you like to play again?';
         document.getElementById("keep-button").disabled = true;
@@ -234,8 +223,6 @@ function keepDi() {
                 var speach = randomSpeach[randomSpeachIndex];
                 return speach;
             }
-
-
         }
     }
 }
@@ -292,10 +279,8 @@ function endTurn() {
                 } else if (zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 0;
                     zenRandomNumber = 0;
-                    console.log("end zen turn!")
                     document.getElementById("points-indicator").style.backgroundColor = "#ff8080";
                 }
-
 
                 if (dice.number === 1 && zenDiceWithOnes.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 100;
@@ -328,7 +313,6 @@ function endTurn() {
                 document.getElementById("cpu-score").style.fontWeight = '400';
             },1500);
         
-
             newZenScore();
             //displaying and updating the total points of the cpu
             function newZenScore() {
@@ -363,7 +347,6 @@ function endTurn() {
     //determining if the computer won and displaying a message
     if (cpuScore >= 5000) {
         gameHasBegun = false;
-        console.log("Mazer Zen wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
         document.getElementById("winner-text").innerHTML = '"I have defeated you, but you did well! Would you like to play again?"';
         document.getElementById("keep-button").disabled = true;
@@ -395,6 +378,4 @@ function endTurn() {
             }
         }
     }
-
-
 }
