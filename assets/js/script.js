@@ -107,6 +107,24 @@ function rollDi() {
             document.getElementById("roll-button").style.backgroundColor = '#ff8080';
             document.getElementById("stop-button").disabled = false;
             document.getElementById("points-indicator").style.backgroundColor = "#ff8080"
+
+            setTimeout(function endTurnIndicatordelay() {
+                document.getElementById("turn-indicator").style.visibility = 'visible';
+                document.getElementById("turn-text").innerHTML = zeroRollIndicator();
+            }, 500);
+
+
+            setTimeout(function zeroRollIndicator(){
+                document.getElementById("turn-indicator").style.visibility = 'hidden'
+            }, 1500);
+
+            //generates random speach for the message in the turn indicator
+            function zeroRollIndicator() {
+                var zeroSpeach = ['"UNLUCKY"', '"YOU GOT ZERO"', '"NEXT TIME!"', '"YOUR TURN HAS ENDED"', '"ZERO,END OF TURN"'];
+                var zeroSpeachIndex = Math.floor(Math.random() * zeroSpeach.length);
+                var zenZeroSpeach = zeroSpeach[zeroSpeachIndex];
+                return zenZeroSpeach;
+            }
         }
 
         if (dice.number === 1 && diceWithOnes.length < 3) {
