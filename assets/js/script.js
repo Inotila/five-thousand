@@ -62,6 +62,8 @@ function play() {
 //main function for user, this is how the dice is rolled
 function rollDi() {
     currentPoints = 0;
+    gameHasBegun = true;
+    playerRolled = true;
 
     let dices = ["one", "two", "three", "four", "five", "six"].map(
         (item, index) => {
@@ -104,10 +106,12 @@ function rollDi() {
             setTimeout(function endTurnIndicatordelay() {
                 document.getElementById("turn-indicator").style.visibility = 'visible';
                 document.getElementById("turn-text").innerHTML = zeroRollIndicator();
+                document.getElementById("stop-button").disabled = true;
             }, 500);
 
             setTimeout(function zeroRollIndicator(){
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
+                document.getElementById("stop-button").disabled = false;
             }, 1500);
 
             //generates random speach for the message in the turn indicator
@@ -148,9 +152,6 @@ function rollDi() {
             item.elementId
         ).src = `./assets/images/${item.imgSrc}`);
     });
-
-    gameHasBegun = true;
-    playerRolled = true;
 
     //enabling the keep button after the first roll
     if (playerRolled === true) {
@@ -215,6 +216,13 @@ function keepDi() {
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
             }, 1500);
+
+            setTimeout(function disablePassButton () {
+                document.getElementById("stop-button").disabled = true;
+            },0000)
+            setTimeout(function enablePassButton () {
+                document.getElementById("stop-button").disabled = false;
+            }, 1500)
 
             //generates random speach for the message in the turn indicator
             function masterTurnSpeach() {
@@ -329,10 +337,9 @@ function endTurn() {
             });
         }
         rollCounter = 0;
-        playerRolled = true;
 
         //locking the pass the dice button and unlocking the others to guide the user into the next step and avoid pressing the wrong button
-        if (playerRolled === true) {
+        if (playerRolled === false) {
             document.getElementById("roll-button").disabled = false;
             document.getElementById("roll-button").style.backgroundColor = '#fff';
             document.getElementById("roll-button").addEventListener("mouseover", function (event) {
@@ -360,15 +367,22 @@ function endTurn() {
     turnIndicator();
 //a pop up message to indicate who's turn it is
     function turnIndicator() {
-        if (playerRolled === true && gameHasBegun === true) {
+        if (playerRolled === false && gameHasBegun === true) {
             setTimeout(function endOfMasterRoll() {
-                document.getElementById("turn-indicator").style.visibility = 'visible'
+                document.getElementById("turn-indicator").style.visibility = 'visible';
             }, 500);
             document.getElementById("turn-text").innerHTML = TurnSpeach();
 
             setTimeout(function closeTurnIndicator() {
-                document.getElementById("turn-indicator").style.visibility = 'hidden'
+                document.getElementById("turn-indicator").style.visibility = 'hidden';
             }, 1500);
+
+            setTimeout(function disableRollButton () {
+                document.getElementById("roll-button").disabled = true;
+            },0000)
+            setTimeout(function enableRollButton () {
+                document.getElementById("roll-button").disabled = false;
+            }, 1500)
 
             function TurnSpeach() {
                 var randomSpeach = ['"IT IS YOUR TURN!"', '"YOUR THROW"', '"YOU!"', '"YOU ARE UP"', '"THE DICE IS YOURS"', '"TRY YOUR LUCK"', '"BEST OF LUCK"'];
