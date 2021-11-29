@@ -76,6 +76,7 @@ hr {
 
 #master-text {
     text-align: center;
+    padding:10px;
 }
 
 .control-buttons {
@@ -269,13 +270,18 @@ hr {
     top: 10px;
 }
 
-#rules-text {
+#rules-container {
     width: 70%;
     display: block;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50px;
+}
+
+
+#rules-text {
+    padding:5px;
 }
 
 #rules-text>p {
