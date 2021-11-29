@@ -202,16 +202,16 @@ function keepDi() {
             setTimeout(function endTurnIndicatordelay() {
                 document.getElementById("turn-indicator").style.visibility = 'visible';
                 document.getElementById("turn-text").innerHTML = masterTurnSpeach();
-            }, 1200);
+            }, 500);
 
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 2400);
+            }, 1500);
 
             //generates random speach for the message in the turn indicator
             function masterTurnSpeach() {
-                var randomSpeach = ["IT IS MY TURN!", "LET THE MASTER PLAY", "MY GO!", "PASS THE DICE", "WATCH AND LEARN", "MY THROW", "I'M READY!"];
+                var randomSpeach = ['"IT IS MY TURN!"', '"LET THE MASTER PLAY"', '"MY GO!"', '"PASS THE DICE"', '"WATCH AND LEARN"', '"MY THROW"', '"I   AM READY!"'];
                 var randomSpeachIndex = Math.floor(Math.random() * randomSpeach.length);
                 var speach = randomSpeach[randomSpeachIndex];
                 return speach;
@@ -347,7 +347,7 @@ function endTurn() {
         gameHasBegun = false;
         console.log("Mazer Zen wins");
         document.getElementById("winner-pop-up").style.visibility = 'visible';
-        document.getElementById("winner-text").innerHTML = 'I have defeated you, but you did well! Would you like to play again?';
+        document.getElementById("winner-text").innerHTML = '"I have defeated you, but you did well! Would you like to play again?"';
         document.getElementById("keep-button").disabled = true;
         document.getElementById("keep-button").style.backgroundColor = '#ff8080';
         document.getElementById("roll-button").disabled = true;
@@ -362,15 +362,15 @@ function endTurn() {
         if (playerRolled === true && gameHasBegun === true) {
             setTimeout(function endOfMasterRoll() {
                 document.getElementById("turn-indicator").style.visibility = 'visible'
-            }, 1200);
+            }, 500);
             document.getElementById("turn-text").innerHTML = TurnSpeach();
 
             setTimeout(function closeTurnIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden'
-            }, 2400);
+            }, 1500);
 
             function TurnSpeach() {
-                var randomSpeach = ["IT IS YOUR TURN!", "YOUR THROW", "YOU!", "YOU ARE UP", "THE DICE IS YOURS", "TRY YOUR LUCK", "BEST OF LUCK"];
+                var randomSpeach = ['"IT IS YOUR TURN!"', '"YOUR THROW"', '"YOU!"', '"YOU ARE UP"', '"THE DICE IS YOURS"', '"TRY YOUR LUCK"', '"BEST OF LUCK"'];
                 var speachIndex = Math.floor(Math.random() * randomSpeach.length);
                 var speachTwo = randomSpeach[speachIndex];
                 return speachTwo;
