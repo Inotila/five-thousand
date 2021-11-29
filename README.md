@@ -90,7 +90,6 @@ I have confirmed that all my inputs and fields work and accept the correct data 
 
 I have confirmed that all links work, and all images open.
 
-
 ## Bugs and fixes
 
 ### Solved bugs
@@ -108,6 +107,8 @@ CSS - No errors returned from the official (jigsaw) validator
 Accessibility - Confirmation that the colors content is easy to read and the sight is accessible  by running it through lighthouse in devtools.
 
 <img src="" width="700">
+
+## User testing and feedback
 
 ## Deployment
 
