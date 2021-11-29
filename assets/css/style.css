@@ -76,7 +76,7 @@ hr {
 
 #master-text {
     text-align: center;
-    padding:5px;
+    padding: 5px;
 }
 
 .control-buttons {
@@ -235,8 +235,8 @@ hr {
 
 #turn-text {
     background-color: rgba(255, 255, 255, 0.9);
-    font-weight: bold; 
-    border-radius:20px;
+    font-weight: bold;
+    border-radius: 20px;
     font-size: 200%;
     text-align: center;
     display: block;
@@ -280,7 +280,7 @@ hr {
 }
 
 #rules-text {
-    padding:5px;
+    padding: 5px;
 }
 
 #rules-text>p {
@@ -379,10 +379,17 @@ hr {
     }
 
     #master-rules-img {
-        left: 50px;
+        position: none;
+        width: 100%;
     }
 
-    #rules-text {
+    #master-class-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #rules-container {
         width: 100%;
         clear: both;
         border-radius: 20px;
