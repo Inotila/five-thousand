@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 //Disabling buttons that only will only be used once the user has started playing so they know what to press
 startingOptions();
+
 function startingOptions() {
     document.getElementById("stop-button").disabled = true;
     document.getElementById("keep-button").disabled = true;
@@ -38,6 +39,7 @@ function startingOptions() {
 
 //counting the number of clicks to limit the number of turns a user gets
 clickCount();
+
 function clickCount() {
     if (playerRolled === true) {
         rollCounter = rollCounter + 1;
@@ -45,6 +47,7 @@ function clickCount() {
 
     //limting the number of times the user can play to 3 rolls
     rollNumberLimit();
+
     function rollNumberLimit() {
         if (rollCounter === 3) {
             document.getElementById("roll-button").disabled = true;
@@ -102,18 +105,18 @@ function rollDi() {
                 document.getElementById("stop-button").disabled = true;
             }, 500);
 
-            setTimeout(function zeroRollIndicator(){
+            setTimeout(function zeroRollIndicator() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden';
                 document.getElementById("stop-button").disabled = false;
             }, 1500);
+        }
 
-            //generates random speach for the message in the turn indicator
-            function zeroRollIndicator() {
-                var zeroSpeach = ['"UNLUCKY"', '"YOU GOT ZERO"', '"NEXT TIME!"', '"YOUR TURN HAS ENDED"', '"ZERO,END OF TURN"'];
-                var zeroSpeachIndex = Math.floor(Math.random() * zeroSpeach.length);
-                var zenZeroSpeach = zeroSpeach[zeroSpeachIndex];
-                return zenZeroSpeach;
-            }
+        //generates random speach for the message in the turn indicator
+        function zeroRollIndicator() {
+            var zeroSpeach = ['"UNLUCKY"', '"YOU GOT ZERO"', '"NEXT TIME!"', '"YOUR TURN HAS ENDED"', '"ZERO,END OF TURN"'];
+            var zeroSpeachIndex = Math.floor(Math.random() * zeroSpeach.length);
+            var zenZeroSpeach = zeroSpeach[zeroSpeachIndex];
+            return zenZeroSpeach;
         }
 
         //change the score indicator to green for postive user feedback when they score a bonus point
@@ -150,9 +153,9 @@ function rollDi() {
 
     //display the images of the dice that was rolled
     dices.map((item) => {
-        if (gameHasBegun === true){
-            document.getElementById("dice-contiainer").style.visibility ="visible";
-        }        
+        if (gameHasBegun === true) {
+            document.getElementById("dice-contiainer").style.visibility = "visible";
+        }
         return (document.getElementById(
             item.elementId
         ).src = `./assets/images/${item.imgSrc}`);
@@ -172,11 +175,11 @@ function keepDi() {
 
     setTimeout(function styleScoreInc() {
         document.getElementById("player-score").style.fontWeight = 'bolder';
-    },500);
+    }, 500);
 
     setTimeout(function unsetStyleScoreInc() {
         document.getElementById("player-score").style.fontWeight = '400';
-    },1500);
+    }, 1500);
 
     newScore();
     //updates the players total score after every turn
@@ -222,21 +225,20 @@ function keepDi() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden';
             }, 1500);
 
-            setTimeout(function disablePassButton () {
+            setTimeout(function disablePassButton() {
                 document.getElementById("stop-button").disabled = true;
-            },0000);
-            setTimeout(function enablePassButton () {
+            }, 0000);
+            setTimeout(function enablePassButton() {
                 document.getElementById("stop-button").disabled = false;
             }, 1500);
-
-            //generates random speach for the message in the turn indicator
-            function masterTurnSpeach() {
-                var randomSpeach = ['"IT IS MY TURN!"', '"LET THE MASTER PLAY"', '"MY GO!"', '"PASS THE DICE"', '"WATCH AND LEARN"', '"MY THROW"', '"I   AM READY!"'];
-                var randomSpeachIndex = Math.floor(Math.random() * randomSpeach.length);
-                var speach = randomSpeach[randomSpeachIndex];
-                return speach;
-            }
         }
+    }
+    //generates random speach for the message in the turn indicator
+    function masterTurnSpeach() {
+        var randomSpeach = ['"IT IS MY TURN!"', '"LET THE MASTER PLAY"', '"MY GO!"', '"PASS THE DICE"', '"WATCH AND LEARN"', '"MY THROW"', '"I   AM READY!"'];
+        var randomSpeachIndex = Math.floor(Math.random() * randomSpeach.length);
+        var speach = randomSpeach[randomSpeachIndex];
+        return speach;
     }
 }
 
@@ -311,30 +313,18 @@ function endTurn() {
                 document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
             }
 
-            //displaying the current points of the cpus turn
-            function zenPoints() {
-                let ZenScore = parseInt(document.getElementById("current-score").innerHTML);
-                document.getElementById("current-score").innerHTML = zenCurrentPoints;
-                return ZenScore;
-            }
             zenPoints();
 
             cpuScore = cpuScore + zenCurrentPoints;
             setTimeout(function zenStyleScoreInc() {
                 document.getElementById("cpu-score").style.fontWeight = 'bolder';
-            },500);
-        
+            }, 500);
+
             setTimeout(function zenUnsetStyleScoreInc() {
                 document.getElementById("cpu-score").style.fontWeight = '400';
-            },1500);
-        
+            }, 1500);
+
             newZenScore();
-            //displaying and updating the total points of the cpu
-            function newZenScore() {
-                let updateZenScore = parseInt(document.getElementById("cpu-score").innerHTML);
-                document.getElementById("cpu-score").innerHTML = cpuScore;
-                return updateZenScore;
-            }
 
             //display the images of the dice that are the result of the roll
             zenDices.map((item) => {
@@ -372,7 +362,7 @@ function endTurn() {
     }
 
     turnIndicator();
-//a pop up message to indicate who's turn it is
+    //a pop up message to indicate who's turn it is
     function turnIndicator() {
         if (playerRolled === false && gameHasBegun === true) {
             setTimeout(function endOfMasterRoll() {
@@ -384,19 +374,32 @@ function endTurn() {
                 document.getElementById("turn-indicator").style.visibility = 'hidden';
             }, 1500);
 
-            setTimeout(function disableRollButton () {
+            setTimeout(function disableRollButton() {
                 document.getElementById("roll-button").disabled = true;
-            },0000);
-            setTimeout(function enableRollButton () {
+            }, 0000);
+            setTimeout(function enableRollButton() {
                 document.getElementById("roll-button").disabled = false;
             }, 1500);
-
-            function TurnSpeach() {
-                var randomSpeach = ['"IT IS YOUR TURN!"', '"YOUR THROW"', '"YOU!"', '"YOU ARE UP"', '"THE DICE IS YOURS"', '"TRY YOUR LUCK"', '"BEST OF LUCK"'];
-                var speachIndex = Math.floor(Math.random() * randomSpeach.length);
-                var speachTwo = randomSpeach[speachIndex];
-                return speachTwo;
-            }
         }
+    }
+    //displaying the current points of the cpus turn
+    function zenPoints() {
+        let ZenScore = parseInt(document.getElementById("current-score").innerHTML);
+        document.getElementById("current-score").innerHTML = zenCurrentPoints;
+        return ZenScore;
+    }
+
+    function TurnSpeach() {
+        var randomSpeach = ['"IT IS YOUR TURN!"', '"YOUR THROW"', '"YOU!"', '"YOU ARE UP"', '"THE DICE IS YOURS"', '"TRY YOUR LUCK"', '"BEST OF LUCK"'];
+        var speachIndex = Math.floor(Math.random() * randomSpeach.length);
+        var speachTwo = randomSpeach[speachIndex];
+        return speachTwo;
+    }
+
+      //displaying and updating the total points of the cpu
+      function newZenScore() {
+        let updateZenScore = parseInt(document.getElementById("cpu-score").innerHTML);
+        document.getElementById("cpu-score").innerHTML = cpuScore;
+        return updateZenScore;
     }
 }
