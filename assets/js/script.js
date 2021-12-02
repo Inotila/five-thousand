@@ -227,7 +227,7 @@ function keepDi() {
 
             setTimeout(function disablePassButton() {
                 document.getElementById("stop-button").disabled = true;
-            }, 0000);
+            }, 0);
             setTimeout(function enablePassButton() {
                 document.getElementById("stop-button").disabled = false;
             }, 1500);
@@ -250,8 +250,8 @@ function endTurn() {
 
     //cpu logic so that it too gets 3 rolls and rolls again if it gets a score less than 150 to make it compete
     let i = 0;
-    while (i > 3 && zenCurrentPoints >= 150) {
-        masterTurn() + i;
+    while (i < 3 && zenCurrentPoints <= 150) {
+        masterTurn();
         i++;
     }
 
@@ -376,7 +376,7 @@ function endTurn() {
 
             setTimeout(function disableRollButton() {
                 document.getElementById("roll-button").disabled = true;
-            }, 0000);
+            }, 0);
             setTimeout(function enableRollButton() {
                 document.getElementById("roll-button").disabled = false;
             }, 1500);
