@@ -6,7 +6,6 @@ var zenCurrentPoints = 0;
 var rollCounter = 1;
 var keepClicked = false;
 var playerRolled = false;
-var cpuRolled = false;
 let audio = new Audio("./assets/sounds/dice-roll.wav");
 let gameHasBegun = false;
 
@@ -24,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
-})
+});
 
 //Disabling buttons that only will only be used once the user has started playing so they know what to press
 startingOptions();
@@ -80,10 +79,10 @@ function rollDi() {
 
     //calculating the points by filtering out the relavant numbers from the array
     dices.map((dice, _index) => {
-        let diceWithOnes = dices.filter((item, index) => item.number === 1);
-        let diceWithFives = dices.filter((item, index) => item.number === 5);
-        let diceWithoutOnes = dices.filter((item, index) => item.number !== 1);
-        let diceWithoutFives = dices.filter((item, index) => item.number !== 5);
+        let diceWithOnes = dices.filter((item) => item.number === 1);
+        let diceWithFives = dices.filter((item) => item.number === 5);
+        let diceWithoutOnes = dices.filter((item) => item.number !== 1);
+        let diceWithoutFives = dices.filter((item) => item.number !== 5);
 
         //calcultating how the point values of each number
         if (diceWithOnes.length >= 3 && _index === 0) {
@@ -95,7 +94,7 @@ function rollDi() {
             document.getElementById("roll-button").disabled = true;
             document.getElementById("roll-button").style.backgroundColor = '#ff8080';
             document.getElementById("stop-button").disabled = false;
-            document.getElementById("points-indicator").style.backgroundColor = "#ff8080"
+            document.getElementById("points-indicator").style.backgroundColor = "#ff8080";
 
             setTimeout(function endTurnIndicatordelay() {
                 document.getElementById("turn-indicator").style.visibility = 'visible';
@@ -104,7 +103,7 @@ function rollDi() {
             }, 500);
 
             setTimeout(function zeroRollIndicator(){
-                document.getElementById("turn-indicator").style.visibility = 'hidden'
+                document.getElementById("turn-indicator").style.visibility = 'hidden';
                 document.getElementById("stop-button").disabled = false;
             }, 1500);
 
@@ -150,7 +149,7 @@ function rollDi() {
     currentScore();
 
     //display the images of the dice that was rolled
-    dices.map((item, index) => {
+    dices.map((item) => {
         if (gameHasBegun === true){
             document.getElementById("dice-contiainer").style.visibility ="visible";
         }        
@@ -220,15 +219,15 @@ function keepDi() {
 
 
             setTimeout(function closeTurnIndicator() {
-                document.getElementById("turn-indicator").style.visibility = 'hidden'
+                document.getElementById("turn-indicator").style.visibility = 'hidden';
             }, 1500);
 
             setTimeout(function disablePassButton () {
                 document.getElementById("stop-button").disabled = true;
-            },0000)
+            },0000);
             setTimeout(function enablePassButton () {
                 document.getElementById("stop-button").disabled = false;
-            }, 1500)
+            }, 1500);
 
             //generates random speach for the message in the turn indicator
             function masterTurnSpeach() {
@@ -274,10 +273,10 @@ function endTurn() {
 
             //filtering the values of the array
             zenDices.map((dice, _index) => {
-                let zenDiceWithOnes = zenDices.filter((item, index) => item.number === 1);
-                let zenDiceWithFives = zenDices.filter((item, index) => item.number === 5);
-                let zenDiceWithoutOnes = zenDices.filter((item, index) => item.number !== 1);
-                let zenDiceWithoutFives = zenDices.filter((item, index) => item.number !== 5);
+                let zenDiceWithOnes = zenDices.filter((item) => item.number === 1);
+                let zenDiceWithFives = zenDices.filter((item) => item.number === 5);
+                let zenDiceWithoutOnes = zenDices.filter((item) => item.number !== 1);
+                let zenDiceWithoutFives = zenDices.filter((item) => item.number !== 5);
 
                 //calculating the points from taking the filtered values and giving them a point value
                 if (zenDiceWithOnes.length >= 3 && _index === 0) {
@@ -286,16 +285,15 @@ function endTurn() {
                     zenCurrentPoints = zenCurrentPoints + 500;
                 } else if (zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 0;
-                    zenRandomNumber = 0;
                     document.getElementById("points-indicator").style.backgroundColor = "#ff8080";
                 }
 
                 if (dice.number === 1 && zenDiceWithOnes.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 100;
-                    document.getElementById("points-indicator").style.backgroundColor = "#fff"
+                    document.getElementById("points-indicator").style.backgroundColor = "#fff";
                 } else if (dice.number === 5 && zenDiceWithFives.length < 3) {
                     zenCurrentPoints = zenCurrentPoints + 50;
-                    document.getElementById("points-indicator").style.backgroundColor = "#fff"
+                    document.getElementById("points-indicator").style.backgroundColor = "#fff";
                 } else {
                     zenCurrentPoints = zenCurrentPoints + 0;
                     if (zenCurrentPoints === 0) {
@@ -339,7 +337,7 @@ function endTurn() {
             }
 
             //display the images of the dice that are the result of the roll
-            zenDices.map((item, index) => {
+            zenDices.map((item) => {
                 return (document.getElementById(
                     item.zenElementId
                 ).src = `./assets/images/${item.imgSrc}`);
@@ -388,10 +386,10 @@ function endTurn() {
 
             setTimeout(function disableRollButton () {
                 document.getElementById("roll-button").disabled = true;
-            },0000)
+            },0000);
             setTimeout(function enableRollButton () {
                 document.getElementById("roll-button").disabled = false;
-            }, 1500)
+            }, 1500);
 
             function TurnSpeach() {
                 var randomSpeach = ['"IT IS YOUR TURN!"', '"YOUR THROW"', '"YOU!"', '"YOU ARE UP"', '"THE DICE IS YOURS"', '"TRY YOUR LUCK"', '"BEST OF LUCK"'];
