@@ -33,7 +33,6 @@ hr {
 }
 
 /* homepage */
-
 #game-logo {
     display: block;
     margin-left: auto;
@@ -102,7 +101,6 @@ hr {
 }
 
 /* game play*/
-
 #score-keeper {
     display: block;
     margin-left: auto;
@@ -143,13 +141,11 @@ hr {
     border-radius: 5px;
 }
 
-
 #play-controls {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 .play-buttons {
     font-size: 130%;
@@ -170,7 +166,6 @@ hr {
 }
 
 /*winner popup*/
-
 #winner-pop-up {
     visibility: hidden;
     background-color: rgba(255, 255, 255, 0.8);
@@ -205,7 +200,6 @@ hr {
     padding: 0px;
 }
 
-
 .winner-buttons:hover {
     background-color: #a0db16;
 }
@@ -228,13 +222,11 @@ hr {
     margin-right: auto;
 }
 
-
 #turn-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 
 #turn-text {
     background-color: rgba(255, 255, 255, 0.9);
@@ -252,8 +244,6 @@ hr {
 }
 
 /*rules page */
-
-
 #rules-page {
     width: 70%;
     display: block;
@@ -263,7 +253,6 @@ hr {
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 10px;
-
 }
 
 #master-rules-img {
@@ -289,7 +278,6 @@ hr {
     text-align: center;
     margin-left: 10px;
     margin-right: 10px;
-
 }
 
 .rule-and-about-button {
@@ -309,9 +297,7 @@ hr {
     text-align: center;
 }
 
-
 /*social media links */
-
 .social-networks {
     text-align: center;
     padding-inline-start: 0px;
@@ -329,8 +315,7 @@ hr {
 }
 
 /*medium screen for mobiles and tabs 950px wide and down */
-@media screen and (max-width: 835px) {
-
+@media screen and (max-width: 767px) {
     /*home page */
     #game-logo {
         display: block;
@@ -338,7 +323,6 @@ hr {
         margin-right: auto;
         width: 100%;
     }
-
 
     #home-zone {
         width: 100%;
@@ -350,16 +334,7 @@ hr {
     }
 
     #hero-img {
-        width: 50%;
-
-    }
-
-    #master-img {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        position: relative;
-        right: 25px
+        width: 100%;
     }
 
     #welcome-text {
@@ -425,7 +400,6 @@ hr {
         width: 50%;
     }
 
-
     #play-controls {
         display: block;
         margin-left: auto;
@@ -472,7 +446,6 @@ hr {
     #static-div {
         width: 90%;
     }
-
 }
 
 /* media for tablets*/
