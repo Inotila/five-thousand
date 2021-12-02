@@ -126,10 +126,14 @@ hr {
     border-radius: 10px;
 }
 
-#play-zone>img {
+#dice-contiainer>img {
     width: 133px;
     position: relative;
     top: 10px;
+}
+
+#dice-contiainer {
+    visibility: hidden;
 }
 
 #points-indicator {

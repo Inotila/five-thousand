@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="./assets/images/game-logo.png"/>
+    <meta property="og:image" content="./assets/images/game-logo.png" />
     <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Lato&display=swap" rel="stylesheet">
     <link rel="icon" href="data:,">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -20,19 +20,21 @@
     <!-- this section if for keeping the scores of the game -->
     <div id="score-keeper">
         <p class="total-score">Player Score: <span id="player-score">0</span></p>
-            <hr>
-           <p class="total-score">Master Score: <span id="cpu-score">0</span></p>
+        <hr>
+        <p class="total-score">Master Score: <span id="cpu-score">0</span></p>
     </div>
     <!-- this is where the dice are displayed, but they are generated via the js.script -->
     <div id="play-zone">
-        <img id="dice-one" class="dice-img" src="#" alt="#">
-        <img id="dice-two" class="dice-img" src="#" alt="#">
-        <img id="dice-three" class="dice-img" src="#" alt="#">
-        <br>
-        <img id="dice-four" class="dice-img" src="#" alt="#">
-        <img id="dice-five" class="dice-img" src="#" alt="#">
-        <img id="dice-six" class="dice-img" src="#" alt="#">
-        <div id="turn-score" class="dice-img">
+        <div id="dice-contiainer">
+            <img id="dice-one" class="dice-img" src='#' alt="A dice image">
+            <img id="dice-two" class="dice-img" src="#" alt="A dice image">
+            <img id="dice-three" class="dice-img" src="#" alt="A dice image">
+            <br>
+            <img id="dice-four" class="dice-img" src="#" alt="A dice image">
+            <img id="dice-five" class="dice-img" src="#" alt="A dice image">
+            <img id="dice-six" class="dice-img" src="#" alt="A dice image">
+        </div>
+        <div id="turn-score">
             <p id="points-indicator">Current Score:<span id="current-score">0</span></p>
         </div>
     </div>
@@ -43,7 +45,7 @@
         <button data-type="stop" class="play-buttons" id="stop-button">PASS DICE</button>
     </div>
     <footer>
-         <!-- social media links -->
+        <!-- social media links -->
         <ul class="social-networks">
             <li>
                 <a href="https://m.facebook.com/ArcToonWorld/" target="_blank" rel="noopener"

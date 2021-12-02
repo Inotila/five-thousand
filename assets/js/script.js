@@ -145,13 +145,15 @@ function rollDi() {
     function currentScore() {
         let score = parseInt(document.getElementById("current-score").innerHTML);
         document.getElementById("current-score").innerHTML = currentPoints;
-        document.getElementsByClassName("dice-img").alt ="image of a dice";
         return score;
     }
     currentScore();
 
     //display the images of the dice that was rolled
     dices.map((item, index) => {
+        if (gameHasBegun === true){
+            document.getElementById("dice-contiainer").style.visibility ="visible";
+        }        
         return (document.getElementById(
             item.elementId
         ).src = `./assets/images/${item.imgSrc}`);
