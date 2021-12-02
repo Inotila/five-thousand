@@ -1,7 +1,7 @@
 /* body,a, h1 to h6, header, and footer */
 
 body {
-    font-family: Fjalla One, sans-serif;
+    font-family: "Fjalla One", sans-serif;
     font-size: 120%;
     background-color: #ebdc0c;
     min-height: 100vh;
@@ -360,7 +360,6 @@ hr {
     }
 
     #master-rules-img {
-        position: none;
         width: 100%;
     }
 
@@ -394,7 +393,7 @@ hr {
         border-radius: 10px;
     }
 
-    #play-zone>img {
+    #dice-contiainer>img {
         width: 20%;
         position: relative;
         top: 10px;
