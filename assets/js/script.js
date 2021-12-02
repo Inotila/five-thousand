@@ -142,6 +142,7 @@ function rollDi() {
     function currentScore() {
         let score = parseInt(document.getElementById("current-score").innerHTML);
         document.getElementById("current-score").innerHTML = currentPoints;
+        document.getElementsByClassName("dice-img").alt ="image of a dice";
         return score;
     }
     currentScore();
