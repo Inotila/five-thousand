@@ -13,15 +13,18 @@
 </head>
 
 <body>
+    <!-- logo that seconds as home button -->
     <header>
         <a href="index.html"><img id="game-logo" src="./assets/images/game-logo.png" alt="logo"></a>
     </header>
+    <!-- this section if for keeping the scores of the game -->
     <div id="score-keeper">
         <p class="total-score" id="player-score-media">Player Score: <span id="player-score">0</span>
             <hr>
             Master Score: <span id="cpu-score">0</span></p>
     </div>
     </p>
+    <!-- this is where the dice are displayed, but they are generated via the js.script -->
     <div id="play-zone">
         <img id="dice-one" class="dice-img">
         <img id="dice-two" class="dice-img">
@@ -34,12 +37,14 @@
             <p id="points-indicator">Current Score:<span id="current-score">0</span></p>
         </div>
     </div>
+    <!-- these are the buttons used to play the game -->
     <div class="control-buttons">
         <button data-type="keep" class="play-buttons" id="keep-button">KEEP DICE</button>
         <button data-type="play" class="play-buttons" onclick="clickCount(); play()" id="roll-button">ROLL DICE</button>
         <button data-type="stop" class="play-buttons" id="stop-button">PASS DICE</button>
     </div>
     <footer>
+         <!-- social media links -->
         <ul class="social-networks">
             <li>
                 <a href="https://m.facebook.com/ArcToonWorld/" target="_blank" rel="noopener"
@@ -55,6 +60,7 @@
             </li>
         </ul>
     </footer>
+    <!-- popup for when the game has a winner -->
     <div id="winner-pop-up">
         <div id="popup-img">
             <img id="hero-popup-img" src="./assets/images/master-zen.png"
@@ -69,6 +75,7 @@
             <button class="winner-buttons"><a href="./play.html">YES</a></button>
             <button class="winner-buttons"><a href="./index.html">NO</a></button></div>
     </div>
+    <!-- popup for altering the player who's turn it is -->
     <div id="turn-indicator">
         <div id="static-div">
             <img id="turn-img" src="./assets/images/master-zen.png" alt="a cartoon picture of an Asian zen master">
