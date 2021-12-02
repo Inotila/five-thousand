@@ -44,6 +44,8 @@ function clickCount() {
         rollCounter = rollCounter + 1;
     }
 
+    console.log(rollCounter);
+
     //limting the number of times the user can play to 3 rolls
     rollNumberLimit();
     function rollNumberLimit() {
@@ -337,7 +339,7 @@ function endTurn() {
                 ).src = `./assets/images/${item.imgSrc}`);
             });
         }
-        rollCounter = 0;
+        rollCounter = 1;
 
         //locking the pass the dice button and unlocking the others to guide the user into the next step and avoid pressing the wrong button
         if (playerRolled === false) {
