@@ -44,8 +44,6 @@ function clickCount() {
         rollCounter = rollCounter + 1;
     }
 
-    console.log(rollCounter);
-
     //limting the number of times the user can play to 3 rolls
     rollNumberLimit();
     function rollNumberLimit() {
@@ -90,14 +88,8 @@ function rollDi() {
         //calcultating how the point values of each number
         if (diceWithOnes.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 1000;
-            if (currentPoints >= 1000) {
-                document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
-            }
         } else if (diceWithFives.length >= 3 && _index === 0) {
             currentPoints = currentPoints + 500;
-            if (currentPoints >= 500) {
-                document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
-            }
         } else if (diceWithoutOnes.length === 6 && _index === 0 && diceWithoutFives.length === 6 && _index === 0) {
             currentPoints = currentPoints + 0;
             document.getElementById("roll-button").disabled = true;
@@ -123,6 +115,15 @@ function rollDi() {
                 var zenZeroSpeach = zeroSpeach[zeroSpeachIndex];
                 return zenZeroSpeach;
             }
+        }
+
+        //change the score indicator to green for postive user feedback when they score a bonus point
+        if (currentPoints >= 1000) {
+            document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+        }
+
+        if (currentPoints >= 500) {
+            document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
         }
 
         if (dice.number === 1 && diceWithOnes.length < 3) {
@@ -279,14 +280,8 @@ function endTurn() {
                 //calculating the points from taking the filtered values and giving them a point value
                 if (zenDiceWithOnes.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 1000;
-                    if (zenCurrentPoints >= 1000) {
-                        document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
-                    }
                 } else if (zenDiceWithFives.length >= 3 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 500;
-                    if (zenCurrentPoints >= 500) {
-                        document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
-                    }
                 } else if (zenDiceWithoutOnes.length === 6 && _index === 0 && zenDiceWithoutFives.length === 6 && _index === 0) {
                     zenCurrentPoints = zenCurrentPoints + 0;
                     zenRandomNumber = 0;
@@ -306,6 +301,15 @@ function endTurn() {
                     }
                 }
             });
+
+            //change the score indicator to green for postive user feedback when they score a bonus point
+            if (zenCurrentPoints >= 1000) {
+                document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+            }
+
+            if (zenCurrentPoints >= 500) {
+                document.getElementById("points-indicator").style.backgroundColor = "#a0db16";
+            }
 
             //displaying the current points of the cpus turn
             function zenPoints() {
