@@ -4,9 +4,9 @@ To run a frontend (HTML, CSS, JavaScript only) application in Gitpod, in the ter
 
 python3 -m http.server
 
-To run the webpage click on this link: <a href="">Five thousand</a>
+To run the webpage click on this link: <a href="https://inotila.github.io/five-thousand/index.html" target="_blank">Five thousand</a>
 
-<img src="" width="700">
+<img src="./assets/images/reponsive.png" width="700">
 
 # Five Thousand (Portfolio 2)
 
@@ -40,7 +40,7 @@ In addition, the UI is easy to understand and navigate. Futhermore, the site off
 ## Actual Features (end product)
 1. Welcome/home page -
 
-<img src="" width="700">
+<img src="./assets/images/homepage.png" width="700">
 
 On this page the user is welcomed, and the tone/vibe of the game is set. From this page first-time users will be able to know that this is a game. 
 
@@ -48,7 +48,7 @@ In addition, the home page offers navigation buttons that are simply titled in o
 
 2. Play page - 
 
-<img src="" width="700">
+<img src="./assets/images/gamepage.png" width="700">
 
 This is where the game is played. The UI is simple and users should be able to clear identify the various elements of the page.
 
@@ -63,7 +63,7 @@ The page also has buttons for the game play. The roll dice button is where the p
 
 3. Rule page - 
 
-<img src="" width="700">
+<img src="./assets/images/rulepage.png" width="700">
 
 A page that has information about the rule of the game and how it is played.
 
@@ -71,7 +71,7 @@ In addition, the rules page offers navigation buttons that are simply titled in 
 
 4. About page - 
 
-<img src="" width="700">
+<img src="./assets/images/aboutpage.png" width="700">
 
 A page that has information about the games developer. And clearly states that copying this game is not permited, as it is an orginal game by the developer.
 
@@ -81,7 +81,7 @@ In addition, the about page offers navigation buttons that are simply titled in 
 
 4. reposnive feedback -
 
-<img src="" width="700">
+<img src="./assets/images/feedback.png" width="700">
 
 All the buttons on the page have a hover feature, that turns them green. However, most of the reponsive features are found in the play page, some of these have already been mentioned in the above text. In addition to those that have already beem mention, there is a pop-up to indicate who's turn it is. There is also a winner popup to show that the game has ended and announces the winner. The winner announcing popup also give the user an option to play again or return home. These features make the user feel less isolated.
 
@@ -94,7 +94,7 @@ A nice logo that also serves as a home button.
 
 6. Footer and social media links-
 
-<img src="./assets/images/pagefooter.jpg" width="700">
+<img src="./assets/images/footer.png" width="700">
 
 A footer to keep social media links. These links are links that open in new tabs so as to not take the user away from the website.
 
@@ -149,9 +149,17 @@ Html - No errors returned from the official w3c validator
 
 CSS - No errors returned from the official (jigsaw) validator
 
+<img src="./assets/images/validator-one.png" width="700">
+
+<img src="./assets/images/validator-two.png" width="700">
+
+<img src="./assets/images/validator-three.png" width="700">
+
+<img src="./assets/images/validator-four.png" width="700">
+
 Accessibility - Confirmation that the colors content is easy to read and the sight is accessible  by running it through lighthouse in devtools.
 
-<img src="" width="700">
+<img src="./assets/images/lighthouse.png" width="700">
 
 ## User testing and feedback
 
@@ -183,7 +191,9 @@ And after selecting the Master Branch, provide the link to the website.
 This work is the original work of Inotila Nghaamwa, however the following resources were used to supplement:
 
 ### Code
-I used similar coding approaches to that which was used for the love maths run-through. Particullary the event listeners.
+
+I used similar coding approaches to that which was used for the love maths run-through. Particullary the event listeners. Furthermore, i used the social media links from the love-running runthrough and made a few small changes to it. 
+
 ### Media
 
 All images used are the property of Inotila Nghaamwa, I created them images using adobe software. The sound clip used was downloaded on a site that offers free sound clips.
